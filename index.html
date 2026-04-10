@@ -815,7 +815,7 @@
     <div class="hero-dates">
       <div class="date-chip">📅 官方节日：4月13–15日</div>
       <div class="date-chip">🎉 曼谷狂欢：4月11–16日</div>
-      <div class="date-chip">🌡️ 气温：37–40°C</div>
+      <div class="date-chip">🌡️ 气温：33°C（实时）</div>
     </div>
   </div>
 </section>
@@ -823,17 +823,17 @@
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <div class="nav-inner">
-    <button class="nav-btn" onclick="scrollTo('overview')">节日概况</button>
-    <button class="nav-btn" onclick="scrollTo('zones')">六大战区</button>
-    <button class="nav-btn" onclick="scrollTo('compare')">区域对比</button>
-    <button class="nav-btn" onclick="scrollTo('itinerary')">行程推荐</button>
-    <button class="nav-btn" onclick="scrollTo('prepare')">出行准备</button>
-    <button class="nav-btn" onclick="scrollTo('gear')">装备清单</button>
-    <button class="nav-btn" onclick="scrollTo('transport')">交通指南</button>
-    <button class="nav-btn" onclick="scrollTo('safety')">礼仪安全</button>
-    <button class="nav-btn" onclick="scrollTo('budget')">费用预算</button>
-    <button class="nav-btn" onclick="scrollTo('faq')">常见问题</button>
-    <button class="nav-btn" onclick="scrollTo('info')">实用信息</button>
+    <button class="nav-btn" onclick="scrollToSection('overview')">节日概况</button>
+    <button class="nav-btn" onclick="scrollToSection('zones')">六大战区</button>
+    <button class="nav-btn" onclick="scrollToSection('compare')">区域对比</button>
+    <button class="nav-btn" onclick="scrollToSection('itinerary')">行程推荐</button>
+    <button class="nav-btn" onclick="scrollToSection('prepare')">出行准备</button>
+    <button class="nav-btn" onclick="scrollToSection('gear')">装备清单</button>
+    <button class="nav-btn" onclick="scrollToSection('transport')">交通指南</button>
+    <button class="nav-btn" onclick="scrollToSection('safety')">礼仪安全</button>
+    <button class="nav-btn" onclick="scrollToSection('budget')">费用预算</button>
+    <button class="nav-btn" onclick="scrollToSection('faq')">常见问题</button>
+    <button class="nav-btn" onclick="scrollToSection('info')">实用信息</button>
   </div>
 </nav>
 
@@ -1543,7 +1543,7 @@
       <div class="info-card">
         <div class="info-card-icon">🌡️</div>
         <div class="info-card-label">天气</div>
-        <div class="info-card-value">37–40°C，晴热<br><small style="color:var(--text2)">防暑防晒必备</small></div>
+        <div class="info-card-value">33°C 晴（实时）<br><small style="color:var(--text2)">湿度61%，体感36°C，注意防晒</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🚨</div>
@@ -1577,8 +1577,11 @@
 </footer>
 
 <script>
-  function scrollTo(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   function toggleFaq(el) {
