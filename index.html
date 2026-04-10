@@ -3,34 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🌊 2026年泰国曼谷泼水节游玩攻略</title>
+  <title>2026年泰国曼谷泼水节游玩攻略</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;350;400;450;500;600;700&display=swap');
 
     :root {
-      --blue: #0ea5e9;
-      --cyan: #06b6d4;
-      --teal: #14b8a6;
-      --gold: #f59e0b;
-      --orange: #f97316;
-      --red: #ef4444;
-      --purple: #8b5cf6;
-      --dark: #0f172a;
-      --dark2: #1e293b;
-      --dark3: #334155;
-      --text: #e2e8f0;
-      --text2: #94a3b8;
-      --card: rgba(30, 41, 59, 0.8);
+      --black: #000000;
+      --white: #ffffff;
+      --glass-dark: rgba(0, 0, 0, 0.08);
+      --glass-light: rgba(255, 255, 255, 0.16);
+      --text-secondary: rgba(0, 0, 0, 0.6);
+      --text-tertiary: rgba(0, 0, 0, 0.4);
+      --border: rgba(0, 0, 0, 0.1);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
-      font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-      background: var(--dark);
-      color: var(--text);
-      line-height: 1.7;
-      overflow-x: hidden;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: -0.14px;
     }
 
     /* ===== HERO ===== */
@@ -42,103 +39,84 @@
       justify-content: center;
       text-align: center;
       overflow: hidden;
-      background: linear-gradient(135deg, #0f172a 0%, #0c2a4a 40%, #0f3460 70%, #1a1a4e 100%);
+      background: linear-gradient(135deg, 
+        #00d26a 0%, 
+        #f5e600 25%, 
+        #a855f7 50%, 
+        #ec4899 75%,
+        #00d26a 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
     }
 
-    .hero-bg {
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero::before {
+      content: '';
       position: absolute;
       inset: 0;
-      overflow: hidden;
-    }
-
-    /* animated water drops */
-    .drop {
-      position: absolute;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      animation: dropFall linear infinite;
-      opacity: 0;
-    }
-
-    @keyframes dropFall {
-      0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
-      10% { opacity: 0.6; }
-      90% { opacity: 0.3; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
-    }
-
-    .wave {
-      position: absolute;
-      bottom: 0;
-      left: -50%;
-      width: 200%;
-      height: 120px;
-      border-radius: 50% 50% 0 0;
-      animation: waveAnim ease-in-out infinite;
-    }
-    .wave1 { background: rgba(14,165,233,0.2); animation-duration: 6s; }
-    .wave2 { background: rgba(6,182,212,0.15); animation-duration: 8s; animation-delay: -2s; bottom: 10px; }
-    .wave3 { background: rgba(20,184,166,0.1); animation-duration: 10s; animation-delay: -4s; bottom: 20px; }
-
-    @keyframes waveAnim {
-      0%, 100% { transform: translateX(0) scaleY(1); }
-      50% { transform: translateX(-6%) scaleY(1.08); }
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
       padding: 2rem;
+      max-width: 900px;
     }
 
     .hero-badge {
       display: inline-block;
-      background: linear-gradient(135deg, var(--gold), var(--orange));
-      color: #000;
+      background: var(--white);
+      color: var(--black);
       font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      padding: 0.35rem 1rem;
-      border-radius: 99px;
-      margin-bottom: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
       text-transform: uppercase;
     }
 
     .hero h1 {
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      font-weight: 900;
-      background: linear-gradient(135deg, #fff 0%, var(--cyan) 40%, var(--blue) 80%, var(--purple) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.05;
+      letter-spacing: -1.72px;
+      margin-bottom: 1.5rem;
     }
 
-    .hero h1 .emoji { -webkit-text-fill-color: initial; }
-
     .hero-sub {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      color: var(--text2);
-      max-width: 680px;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--white);
+      opacity: 0.95;
+      max-width: 600px;
       margin: 0 auto 2.5rem;
+      font-weight: 350;
+      line-height: 1.5;
     }
 
     .hero-dates {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .date-chip {
-      background: rgba(14,165,233,0.15);
-      border: 1px solid rgba(14,165,233,0.4);
-      padding: 0.6rem 1.4rem;
-      border-radius: 99px;
+      background: var(--glass-light);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
       font-size: 0.9rem;
-      font-weight: 500;
-      backdrop-filter: blur(8px);
-      color: #7dd3fc;
+      font-weight: 450;
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     /* ===== NAV ===== */
@@ -146,84 +124,83 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      padding: 0.75rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem;
     }
 
     .nav-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.4rem;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .nav-btn {
-      background: none;
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--text2);
-      padding: 0.35rem 0.9rem;
-      border-radius: 99px;
-      font-size: 0.78rem;
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 450;
       cursor: pointer;
       transition: all 0.2s;
       font-family: inherit;
+      letter-spacing: -0.1px;
     }
 
-    .nav-btn:hover, .nav-btn.active {
-      background: var(--blue);
-      border-color: var(--blue);
-      color: #fff;
+    .nav-btn:hover {
+      color: var(--black);
+      background: var(--glass-dark);
+    }
+
+    .nav-btn.active {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .nav-btn:focus {
+      outline: 2px dashed var(--black);
+      outline-offset: 2px;
     }
 
     /* ===== MAIN ===== */
     main {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
     }
 
     /* ===== SECTION ===== */
     .section {
-      margin-bottom: 5rem;
-      scroll-margin-top: 70px;
+      margin-bottom: 6rem;
+      scroll-margin-top: 80px;
     }
 
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      flex-shrink: 0;
+    .section-label {
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 0.75rem;
     }
 
     .section-title {
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
-      font-weight: 700;
-      color: #fff;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.96px;
+      line-height: 1.1;
+      margin-bottom: 2.5rem;
+      color: var(--black);
     }
 
-    .section-title span {
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ===== OVERVIEW TABLE ===== */
+    /* ===== OVERVIEW GRID ===== */
     .overview-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,61 +208,72 @@
     }
 
     .overview-item {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 16px;
-      padding: 1.25rem 1.5rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
       display: flex;
       gap: 1rem;
       align-items: flex-start;
-      transition: transform 0.2s, border-color 0.2s;
-      backdrop-filter: blur(8px);
+      transition: all 0.2s;
     }
 
     .overview-item:hover {
+      border-color: var(--black);
       transform: translateY(-2px);
-      border-color: rgba(14,165,233,0.3);
     }
 
-    .overview-item-icon { font-size: 1.5rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .overview-item-icon { 
+      font-size: 1.5rem; 
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--glass-dark);
+      border-radius: 50%;
+    }
 
     .overview-item-label {
-      font-size: 0.78rem;
-      color: var(--text2);
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
       margin-bottom: 0.3rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.6px;
     }
 
     .overview-item-value {
       font-size: 0.95rem;
-      color: var(--text);
-      font-weight: 500;
+      color: var(--black);
+      font-weight: 450;
+      line-height: 1.5;
     }
 
     /* ===== ZONE CARDS ===== */
     .zone-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
     }
 
     .zone-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       overflow: hidden;
-      transition: transform 0.25s, box-shadow 0.25s;
-      backdrop-filter: blur(8px);
+      transition: all 0.25s;
     }
 
     .zone-card:hover {
+      border-color: var(--black);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       transform: translateY(-4px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     }
 
     .zone-card-header {
-      padding: 1.4rem 1.5rem 1rem;
+      padding: 1.5rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
@@ -293,51 +281,73 @@
 
     .zone-emoji {
       font-size: 2rem;
-      width: 52px;
-      height: 52px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      background: var(--glass-dark);
       flex-shrink: 0;
     }
 
-    .zone-name { font-size: 1.15rem; font-weight: 700; color: #fff; }
-    .zone-en { font-size: 0.8rem; color: var(--text2); margin-top: 0.15rem; }
+    .zone-name { 
+      font-size: 1.15rem; 
+      font-weight: 600; 
+      color: var(--black);
+      letter-spacing: -0.3px;
+    }
+    .zone-en { 
+      font-size: 0.8rem; 
+      color: var(--text-tertiary); 
+      margin-top: 0.2rem;
+      font-weight: 350;
+    }
 
     .zone-badge {
       margin-left: auto;
       font-size: 0.7rem;
-      padding: 0.25rem 0.7rem;
-      border-radius: 99px;
-      font-weight: 600;
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 500;
       flex-shrink: 0;
-      align-self: flex-start;
+      font-family: 'SF Mono', Monaco, monospace;
+      letter-spacing: 0.3px;
     }
 
-    .badge-free { background: rgba(20,184,166,0.2); color: #5eead4; border: 1px solid rgba(20,184,166,0.3); }
-    .badge-paid { background: rgba(245,158,11,0.2); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-free { background: rgba(0, 210, 106, 0.1); color: #00a854; border: 1px solid rgba(0, 210, 106, 0.2); }
+    .badge-paid { background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.2); }
 
     .zone-divider {
       height: 1px;
-      background: rgba(255,255,255,0.06);
+      background: var(--border);
       margin: 0 1.5rem;
     }
 
-    .zone-body { padding: 1rem 1.5rem 1.4rem; }
+    .zone-body { padding: 1.25rem 1.5rem 1.5rem; }
 
     .zone-info-row {
       display: flex;
-      gap: 0.6rem;
+      gap: 0.75rem;
       align-items: flex-start;
-      margin-bottom: 0.55rem;
-      font-size: 0.88rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
     }
 
-    .zone-info-icon { color: var(--blue); flex-shrink: 0; margin-top: 0.1rem; }
-    .zone-info-text { color: #cbd5e1; }
-    .zone-info-text strong { color: var(--text); }
+    .zone-info-icon { 
+      color: var(--text-tertiary); 
+      flex-shrink: 0; 
+      margin-top: 0.15rem;
+      font-size: 0.85rem;
+    }
+    .zone-info-text { 
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .zone-info-text strong { 
+      color: var(--black);
+      font-weight: 500;
+    }
 
     .zone-tags {
       display: flex;
@@ -348,18 +358,18 @@
 
     .zone-tag {
       font-size: 0.72rem;
-      padding: 0.2rem 0.65rem;
-      border-radius: 99px;
-      background: rgba(99,102,241,0.15);
-      color: #a5b4fc;
-      border: 1px solid rgba(99,102,241,0.2);
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+      background: var(--glass-dark);
+      color: var(--text-secondary);
+      font-weight: 450;
     }
 
     /* ===== COMPARE TABLE ===== */
     .compare-table-wrap {
       overflow-x: auto;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
 
     table {
@@ -369,60 +379,67 @@
     }
 
     thead tr {
-      background: rgba(14,165,233,0.15);
+      background: var(--glass-dark);
     }
 
     th {
-      padding: 1rem 1.2rem;
+      padding: 1rem;
       text-align: left;
-      color: #7dd3fc;
-      font-weight: 600;
-      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.6px;
       white-space: nowrap;
+      font-family: 'SF Mono', Monaco, monospace;
     }
 
     tbody tr {
-      border-top: 1px solid rgba(255,255,255,0.05);
+      border-top: 1px solid var(--border);
       transition: background 0.15s;
     }
 
-    tbody tr:hover { background: rgba(255,255,255,0.04); }
+    tbody tr:hover { background: rgba(0,0,0,0.02); }
 
     td {
-      padding: 0.9rem 1.2rem;
-      color: var(--text);
+      padding: 0.9rem 1rem;
+      color: var(--black);
       vertical-align: middle;
     }
 
-    td:first-child { font-weight: 600; }
+    td:first-child { font-weight: 500; }
 
     /* ===== ITINERARY ===== */
     .itinerary-tabs {
       display: flex;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
       flex-wrap: wrap;
     }
 
     .itinerary-tab {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--text2);
-      padding: 0.5rem 1.2rem;
-      border-radius: 10px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.6rem 1.2rem;
+      border-radius: 50px;
       cursor: pointer;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-family: inherit;
-      font-weight: 500;
+      font-weight: 450;
       transition: all 0.2s;
+      letter-spacing: -0.1px;
+    }
+
+    .itinerary-tab:hover {
+      border-color: var(--black);
+      color: var(--black);
     }
 
     .itinerary-tab.active {
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      border-color: transparent;
-      color: #fff;
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
     }
 
     .itinerary-panel { display: none; }
@@ -436,11 +453,11 @@
     .itinerary-timeline::before {
       content: '';
       position: absolute;
-      left: 9px;
+      left: 8px;
       top: 0;
       bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, var(--blue), var(--cyan), var(--teal));
+      background: var(--border);
       border-radius: 2px;
     }
 
@@ -452,109 +469,136 @@
     .timeline-dot {
       position: absolute;
       left: -2rem;
-      top: 0.35rem;
-      width: 18px;
-      height: 18px;
+      top: 0.3rem;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      border: 3px solid var(--dark);
-      box-shadow: 0 0 0 3px rgba(14,165,233,0.2);
+      background: var(--white);
+      border: 2px solid var(--black);
     }
 
     .timeline-day {
-      font-size: 0.78rem;
-      color: var(--cyan);
-      font-weight: 600;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.3rem;
+      letter-spacing: 0.6px;
+      margin-bottom: 0.4rem;
     }
 
     .timeline-content {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 12px;
-      padding: 1rem 1.2rem;
-      font-size: 0.9rem;
-      color: #cbd5e1;
-      backdrop-filter: blur(8px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .timeline-content strong { 
+      color: var(--black);
+      font-weight: 500;
     }
 
     /* ===== GEAR GRID ===== */
     .gear-categories {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     .gear-cat {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 16px;
-      padding: 1.3rem;
-      backdrop-filter: blur(8px);
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
     }
 
     .gear-cat-title {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      letter-spacing: -0.2px;
     }
 
     .gear-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.6rem;
-      margin-bottom: 0.6rem;
-      font-size: 0.86rem;
-      color: #cbd5e1;
+      gap: 0.7rem;
+      margin-bottom: 0.7rem;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
     }
 
     .gear-check {
       width: 18px;
       height: 18px;
-      border-radius: 5px;
-      background: rgba(20,184,166,0.2);
-      border: 1px solid rgba(20,184,166,0.4);
+      border-radius: 4px;
+      background: rgba(0, 210, 106, 0.1);
+      border: 1px solid rgba(0, 210, 106, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       margin-top: 0.1rem;
-      color: #5eead4;
-      font-size: 0.65rem;
+      color: #00a854;
+      font-size: 0.7rem;
     }
 
     /* ===== TRANSPORT ===== */
     .transport-row {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1rem;
     }
 
     .transport-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 14px;
-      padding: 1.2rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem 1rem;
       text-align: center;
-      transition: transform 0.2s;
-      backdrop-filter: blur(8px);
+      transition: all 0.2s;
     }
 
-    .transport-card:hover { transform: translateY(-2px); }
+    .transport-card:hover { 
+      border-color: var(--black);
+      transform: translateY(-2px);
+    }
 
-    .transport-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .transport-name { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 0.4rem; }
-    .transport-rating { font-size: 1rem; margin-bottom: 0.4rem; }
-    .transport-desc { font-size: 0.78rem; color: var(--text2); }
+    .transport-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .transport-name { 
+      font-size: 0.88rem; 
+      font-weight: 600; 
+      color: var(--black); 
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.2px;
+    }
+    .transport-rating { 
+      font-size: 0.85rem; 
+      margin-bottom: 0.4rem;
+      letter-spacing: 1px;
+    }
+    .transport-desc { 
+      font-size: 0.78rem; 
+      color: var(--text-tertiary);
+      line-height: 1.4;
+    }
 
-    .transport-card.best { border-color: rgba(14,165,233,0.4); background: rgba(14,165,233,0.1); }
-    .transport-card.warn { border-color: rgba(239,68,68,0.3); }
+    .transport-card.best { 
+      border-color: var(--black);
+      background: var(--black);
+    }
+    .transport-card.best .transport-name,
+    .transport-card.best .transport-desc { color: var(--white); }
+
+    .transport-card.warn { border-color: rgba(239, 68, 68, 0.3); }
 
     /* ===== BUDGET ===== */
     .budget-wrap {
@@ -568,85 +612,99 @@
     }
 
     .budget-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       padding: 1.5rem;
-      backdrop-filter: blur(8px);
     }
 
     .budget-title {
       font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      letter-spacing: -0.2px;
     }
 
     .budget-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
       font-size: 0.88rem;
     }
 
     .budget-item:last-child { border-bottom: none; }
-    .budget-item-name { color: var(--text2); }
-    .budget-item-val { font-weight: 600; color: #fff; }
-
-    .budget-total {
-      margin-top: 1rem;
-      padding: 0.8rem 1rem;
-      border-radius: 10px;
-      text-align: center;
-      font-size: 1.1rem;
-      font-weight: 700;
+    .budget-item-name { color: var(--text-secondary); }
+    .budget-item-val { 
+      font-weight: 500; 
+      color: var(--black);
+      font-family: 'SF Mono', Monaco, monospace;
     }
 
-    .budget-econ .budget-total { background: rgba(20,184,166,0.15); color: #5eead4; }
-    .budget-comf .budget-total { background: rgba(139,92,246,0.15); color: #c4b5fd; }
+    .budget-total {
+      margin-top: 1.2rem;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .budget-econ .budget-total { 
+      background: rgba(0, 210, 106, 0.1); 
+      color: #00a854; 
+      border: 1px solid rgba(0, 210, 106, 0.2);
+    }
+    .budget-comf .budget-total { 
+      background: rgba(168, 85, 247, 0.1); 
+      color: #7c3aed;
+      border: 1px solid rgba(168, 85, 247, 0.2);
+    }
 
     /* ===== TIPS / SAFETY ===== */
     .tips-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.2rem;
+      gap: 1rem;
     }
 
     .tip-card {
-      background: var(--card);
-      border-radius: 16px;
-      padding: 1.3rem;
-      border: 1px solid rgba(255,255,255,0.06);
-      backdrop-filter: blur(8px);
+      background: var(--white);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border: 1px solid var(--border);
     }
 
     .tip-card-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 1rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      letter-spacing: -0.2px;
     }
 
     .tip-item {
       font-size: 0.86rem;
-      color: #cbd5e1;
-      margin-bottom: 0.55rem;
-      padding-left: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+      padding-left: 1.1rem;
       position: relative;
+      line-height: 1.5;
     }
 
     .tip-item::before {
       content: '→';
       position: absolute;
       left: 0;
-      color: var(--cyan);
+      color: var(--text-tertiary);
       font-size: 0.75rem;
     }
 
@@ -654,28 +712,31 @@
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .faq-item {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       overflow: hidden;
-      backdrop-filter: blur(8px);
       cursor: pointer;
+      transition: border-color 0.2s;
     }
 
+    .faq-item:hover { border-color: var(--black); }
+
     .faq-q {
-      padding: 1.1rem 1.3rem;
-      font-weight: 600;
-      font-size: 0.92rem;
+      padding: 1.2rem 1.3rem;
+      font-weight: 500;
+      font-size: 0.95rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: #e2e8f0;
+      color: var(--black);
       gap: 1rem;
+      letter-spacing: -0.2px;
     }
 
     .faq-arrow {
-      color: var(--blue);
-      font-size: 0.8rem;
+      color: var(--text-tertiary);
+      font-size: 0.75rem;
       transition: transform 0.3s;
       flex-shrink: 0;
     }
@@ -691,126 +752,114 @@
     .faq-item.open .faq-a { max-height: 200px; }
 
     .faq-a-inner {
-      padding: 0 1.3rem 1.1rem;
+      padding: 0 1.3rem 1.2rem;
       font-size: 0.88rem;
-      color: #94a3b8;
+      color: var(--text-secondary);
       line-height: 1.7;
     }
 
     /* ===== USEFUL INFO ===== */
     .info-cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 1rem;
     }
 
     .info-card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 14px;
-      padding: 1.2rem;
-      backdrop-filter: blur(8px);
-      transition: transform 0.2s;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.3rem;
+      transition: all 0.2s;
     }
 
-    .info-card:hover { transform: translateY(-2px); }
+    .info-card:hover { 
+      border-color: var(--black);
+      transform: translateY(-2px);
+    }
 
-    .info-card-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
-    .info-card-label { font-size: 0.75rem; color: var(--text2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
-    .info-card-value { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .info-card-icon { font-size: 1.4rem; margin-bottom: 0.7rem; }
+    .info-card-label { 
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.7rem; 
+      color: var(--text-tertiary); 
+      text-transform: uppercase; 
+      letter-spacing: 0.6px; 
+      margin-bottom: 0.3rem; 
+    }
+    .info-card-value { 
+      font-size: 0.9rem; 
+      color: var(--black); 
+      font-weight: 500;
+      line-height: 1.4;
+    }
 
     /* ===== FOOTER ===== */
     footer {
       text-align: center;
-      padding: 3rem 2rem;
-      color: var(--text2);
-      font-size: 0.82rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 4rem 2rem;
+      color: var(--text-tertiary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      background: var(--white);
     }
 
-    footer a { color: var(--blue); text-decoration: none; }
+    footer a { 
+      color: var(--black); 
+      text-decoration: none;
+      font-weight: 500;
+    }
 
     /* ===== ALERT BOX ===== */
     .alert {
-      border-radius: 12px;
+      border-radius: 8px;
       padding: 1rem 1.2rem;
       display: flex;
       gap: 0.7rem;
       align-items: flex-start;
       margin-top: 1rem;
       font-size: 0.88rem;
+      border: 1px solid;
     }
 
-    .alert-info { background: rgba(14,165,233,0.1); border: 1px solid rgba(14,165,233,0.25); color: #7dd3fc; }
-    .alert-warn { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.25); color: #fcd34d; }
-    .alert-tip { background: rgba(20,184,166,0.1); border: 1px solid rgba(20,184,166,0.25); color: #5eead4; }
+    .alert-info { 
+      background: rgba(14, 165, 233, 0.05); 
+      border-color: rgba(14, 165, 233, 0.2); 
+      color: #0284c7; 
+    }
+    .alert-warn { 
+      background: rgba(245, 158, 11, 0.05); 
+      border-color: rgba(245, 158, 11, 0.2); 
+      color: #d97706; 
+    }
+    .alert-tip { 
+      background: rgba(0, 210, 106, 0.05); 
+      border-color: rgba(0, 210, 106, 0.2); 
+      color: #00a854; 
+    }
 
     .alert-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
     .alert-text { line-height: 1.6; }
-    .alert-text strong { color: #fff; }
-
-    /* ===== DIVIDER ===== */
-    .fancy-divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin: 0 0 2rem;
-    }
-
-    .fancy-divider::before, .fancy-divider::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.1));
-    }
-    .fancy-divider::after {
-      background: linear-gradient(to left, transparent, rgba(255,255,255,0.1));
-    }
+    .alert-text strong { color: var(--black); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .zone-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.2rem; }
-      main { padding: 2.5rem 1rem; }
+      .hero h1 { font-size: 2.5rem; letter-spacing: -1px; }
+      main { padding: 3rem 1rem; }
+      .section { margin-bottom: 4rem; }
+      .nav-inner { gap: 0.3rem; }
+      .nav-btn { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
     }
-
-    /* Gradient accents per section */
-    #overview .section-icon { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
-    #zones .section-icon { background: linear-gradient(135deg, #f97316, #ef4444); }
-    #compare .section-icon { background: linear-gradient(135deg, #8b5cf6, #6366f1); }
-    #itinerary .section-icon { background: linear-gradient(135deg, #14b8a6, #0ea5e9); }
-    #prepare .section-icon { background: linear-gradient(135deg, #f59e0b, #f97316); }
-    #gear .section-icon { background: linear-gradient(135deg, #10b981, #14b8a6); }
-    #transport .section-icon { background: linear-gradient(135deg, #06b6d4, #8b5cf6); }
-    #safety .section-icon { background: linear-gradient(135deg, #ef4444, #f97316); }
-    #budget .section-icon { background: linear-gradient(135deg, #f59e0b, #10b981); }
-    #faq .section-icon { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
-    #info .section-icon { background: linear-gradient(135deg, #0ea5e9, #14b8a6); }
   </style>
 </head>
 <body>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-bg">
-    <!-- animated drops -->
-    <div class="drop" style="width:8px;height:14px;background:#7dd3fc55;left:10%;animation-duration:4s;animation-delay:0s;"></div>
-    <div class="drop" style="width:5px;height:10px;background:#67e8f955;left:25%;animation-duration:5.5s;animation-delay:-1s;"></div>
-    <div class="drop" style="width:10px;height:18px;background:#38bdf855;left:40%;animation-duration:3.8s;animation-delay:-2s;"></div>
-    <div class="drop" style="width:6px;height:11px;background:#93c5fd55;left:55%;animation-duration:4.8s;animation-delay:-0.5s;"></div>
-    <div class="drop" style="width:9px;height:16px;background:#7dd3fc55;left:70%;animation-duration:3.5s;animation-delay:-3s;"></div>
-    <div class="drop" style="width:5px;height:9px;background:#a5f3fc55;left:82%;animation-duration:5s;animation-delay:-1.5s;"></div>
-    <div class="drop" style="width:7px;height:13px;background:#bae6fd55;left:92%;animation-duration:4.2s;animation-delay:-2.5s;"></div>
-    <div class="drop" style="width:4px;height:8px;background:#7dd3fc55;left:18%;animation-duration:6s;animation-delay:-4s;"></div>
-    <div class="drop" style="width:11px;height:19px;background:#67e8f955;left:63%;animation-duration:4.5s;animation-delay:-0.8s;"></div>
-    <div class="drop" style="width:6px;height:12px;background:#38bdf855;left:35%;animation-duration:5.2s;animation-delay:-3.5s;"></div>
-    <div class="wave wave1"></div>
-    <div class="wave wave2"></div>
-    <div class="wave wave3"></div>
-  </div>
   <div class="hero-content">
     <div class="hero-badge">🏆 UNESCO 非物质文化遗产</div>
-    <h1><span class="emoji">🌊</span> 2026年泰国曼谷<br>泼水节游玩攻略</h1>
+    <h1>2026年泰国曼谷<br>泼水节游玩攻略</h1>
     <p class="hero-sub">宋干节（Songkran）— 一年一度的湿身盛典，泰国最盛大的传统新年庆典，带你感受全城水战的极致狂欢</p>
     <div class="hero-dates">
       <div class="date-chip">📅 官方节日：4月13–15日</div>
@@ -841,10 +890,8 @@
 
   <!-- ===== SECTION 1: 节日概况 ===== -->
   <section class="section" id="overview">
-    <div class="section-header">
-      <div class="section-icon">📋</div>
-      <h2 class="section-title">一、<span>节日概况</span></h2>
-    </div>
+    <div class="section-label">Overview</div>
+    <h2 class="section-title">节日概况</h2>
     <div class="overview-grid">
       <div class="overview-item">
         <div class="overview-item-icon">📅</div>
@@ -893,10 +940,8 @@
 
   <!-- ===== SECTION 2: 六大战区 ===== -->
   <section class="section" id="zones">
-    <div class="section-header">
-      <div class="section-icon">🔥</div>
-      <h2 class="section-title">二、曼谷<span>六大核心战区</span></h2>
-    </div>
+    <div class="section-label">Zones</div>
+    <h2 class="section-title">曼谷六大核心战区</h2>
     <div class="zone-grid">
 
       <!-- 是隆路 -->
@@ -1079,7 +1124,7 @@
       </div>
 
       <!-- S2O/SIAM -->
-      <div class="zone-card" style="border-color: rgba(245,158,11,0.3);">
+      <div class="zone-card">
         <div class="zone-card-header">
           <div class="zone-emoji">🎵</div>
           <div>
@@ -1119,10 +1164,8 @@
 
   <!-- ===== SECTION 3: 对比表 ===== -->
   <section class="section" id="compare">
-    <div class="section-header">
-      <div class="section-icon">⚖️</div>
-      <h2 class="section-title">三、<span>各区域对比速查</span></h2>
-    </div>
+    <div class="section-label">Compare</div>
+    <h2 class="section-title">各区域对比速查</h2>
     <div class="compare-table-wrap">
       <table>
         <thead>
@@ -1141,7 +1184,7 @@
             <td>⭐⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥🔥</td>
             <td>⚠️ 需注意</td>
-            <td style="color:#5eead4">免费</td>
+            <td style="color:#00a854">免费</td>
             <td>派对狂人</td>
           </tr>
           <tr>
@@ -1149,7 +1192,7 @@
             <td>⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥</td>
             <td>⚠️ 需注意</td>
-            <td style="color:#5eead4">免费</td>
+            <td style="color:#00a854">免费</td>
             <td>背包客</td>
           </tr>
           <tr>
@@ -1157,7 +1200,7 @@
             <td>⭐⭐⭐⭐</td>
             <td>🔥🔥</td>
             <td>✅ 友好</td>
-            <td style="color:#5eead4">免费</td>
+            <td style="color:#00a854">免费</td>
             <td>文化体验</td>
           </tr>
           <tr>
@@ -1165,7 +1208,7 @@
             <td>⭐⭐⭐</td>
             <td>🔥🔥🔥</td>
             <td>✅ 友好</td>
-            <td style="color:#5eead4">免费</td>
+            <td style="color:#00a854">免费</td>
             <td>都市游客</td>
           </tr>
           <tr>
@@ -1173,7 +1216,7 @@
             <td>⭐⭐⭐</td>
             <td>🔥🔥</td>
             <td>✅✅ 非常友好</td>
-            <td style="color:#5eead4">免费</td>
+            <td style="color:#00a854">免费</td>
             <td>家庭/情侣</td>
           </tr>
           <tr>
@@ -1181,7 +1224,7 @@
             <td>⭐⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥🔥</td>
             <td>❌ 不适合</td>
-            <td style="color:#fcd34d">付费</td>
+            <td style="color:#d97706">付费</td>
             <td>EDM爱好者</td>
           </tr>
         </tbody>
@@ -1191,10 +1234,8 @@
 
   <!-- ===== SECTION 4: 行程安排 ===== -->
   <section class="section" id="itinerary">
-    <div class="section-header">
-      <div class="section-icon">🗺️</div>
-      <h2 class="section-title">四、<span>推荐行程安排</span></h2>
-    </div>
+    <div class="section-label">Itinerary</div>
+    <h2 class="section-title">推荐行程安排</h2>
     <div class="itinerary-tabs">
       <button class="itinerary-tab active" onclick="switchTab('plan1', this)">方案一：曼谷3天精华游</button>
       <button class="itinerary-tab" onclick="switchTab('plan2', this)">方案二：曼谷+芭提雅5晚6天</button>
@@ -1258,12 +1299,10 @@
 
   <!-- ===== SECTION 5: 出行准备 ===== -->
   <section class="section" id="prepare">
-    <div class="section-header">
-      <div class="section-icon">✈️</div>
-      <h2 class="section-title">五、<span>出行准备</span></h2>
-    </div>
+    <div class="section-label">Preparation</div>
+    <h2 class="section-title">出行准备</h2>
 
-    <div class="overview-grid" style="margin-bottom:1.2rem">
+    <div class="overview-grid" style="margin-bottom:1.5rem">
       <div class="overview-item">
         <div class="overview-item-icon">🛂</div>
         <div>
@@ -1299,8 +1338,8 @@
       <div class="alert-text">请出发前查看最新签证政策，以官方公告为准。</div>
     </div>
 
-    <div style="margin-top:1.5rem">
-      <h3 style="color:#fff;font-size:1rem;margin-bottom:1rem;">🏨 住宿推荐区域</h3>
+    <div style="margin-top:2rem">
+      <h3 style="color:var(--black);font-size:1rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">🏨 住宿推荐区域</h3>
       <div class="compare-table-wrap">
         <table>
           <thead>
@@ -1323,10 +1362,8 @@
 
   <!-- ===== SECTION 6: 装备清单 ===== -->
   <section class="section" id="gear">
-    <div class="section-header">
-      <div class="section-icon">🎒</div>
-      <h2 class="section-title">六、<span>必备装备清单</span></h2>
-    </div>
+    <div class="section-label">Gear Checklist</div>
+    <h2 class="section-title">必备装备清单</h2>
     <div class="gear-categories">
       <div class="gear-cat">
         <div class="gear-cat-title">🛡️ 防水防晒类</div>
@@ -1360,11 +1397,9 @@
 
   <!-- ===== SECTION 7: 交通 ===== -->
   <section class="section" id="transport">
-    <div class="section-header">
-      <div class="section-icon">🚇</div>
-      <h2 class="section-title">七、<span>交通指南</span></h2>
-    </div>
-    <h3 style="color:#fff;font-size:0.95rem;margin-bottom:1rem;">📍 曼谷市内交通</h3>
+    <div class="section-label">Transport</div>
+    <h2 class="section-title">交通指南</h2>
+    <h3 style="color:var(--black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">📍 曼谷市内交通</h3>
     <div class="transport-row" style="margin-bottom:2rem">
       <div class="transport-card best">
         <div class="transport-icon">🚈</div>
@@ -1397,7 +1432,7 @@
         <div class="transport-desc">节日期间道路混乱，非常危险，请勿乘坐</div>
       </div>
     </div>
-    <h3 style="color:#fff;font-size:0.95rem;margin-bottom:1rem;">🏖️ 曼谷 ↔ 芭提雅</h3>
+    <h3 style="color:var(--black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">🏖️ 曼谷 ↔ 芭提雅</h3>
     <div class="compare-table-wrap">
       <table>
         <thead><tr><th>交通方式</th><th>车程</th><th>费用参考</th></tr></thead>
@@ -1412,10 +1447,8 @@
 
   <!-- ===== SECTION 8: 礼仪安全 ===== -->
   <section class="section" id="safety">
-    <div class="section-header">
-      <div class="section-icon">🛡️</div>
-      <h2 class="section-title">八、<span>礼仪与安全须知</span></h2>
-    </div>
+    <div class="section-label">Safety & Etiquette</div>
+    <h2 class="section-title">礼仪与安全须知</h2>
     <div class="tips-grid">
       <div class="tip-card">
         <div class="tip-card-title">💧 泼水礼仪</div>
@@ -1450,10 +1483,8 @@
 
   <!-- ===== SECTION 9: 预算 ===== -->
   <section class="section" id="budget">
-    <div class="section-header">
-      <div class="section-icon">💰</div>
-      <h2 class="section-title">九、<span>费用预算参考</span></h2>
-    </div>
+    <div class="section-label">Budget</div>
+    <h2 class="section-title">费用预算参考</h2>
     <div class="budget-wrap">
       <div class="budget-card budget-econ">
         <div class="budget-title">🎒 经济型方案</div>
@@ -1486,10 +1517,8 @@
 
   <!-- ===== SECTION 10: FAQ ===== -->
   <section class="section" id="faq">
-    <div class="section-header">
-      <div class="section-icon">❓</div>
-      <h2 class="section-title">十、<span>常见问题 Q&amp;A</span></h2>
-    </div>
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">常见问题 Q&A</h2>
     <div class="faq-list">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q">不喜欢被泼水，还可以去吗？<span class="faq-arrow">▼</span></div>
@@ -1520,30 +1549,28 @@
 
   <!-- ===== SECTION 11: 实用信息 ===== -->
   <section class="section" id="info">
-    <div class="section-header">
-      <div class="section-icon">📌</div>
-      <h2 class="section-title">十一、<span>实用信息汇总</span></h2>
-    </div>
+    <div class="section-label">Useful Info</div>
+    <h2 class="section-title">实用信息汇总</h2>
     <div class="info-cards">
       <div class="info-card">
         <div class="info-card-icon">💱</div>
         <div class="info-card-label">货币</div>
-        <div class="info-card-value">泰铢（THB）<br><small style="color:var(--text2)">当地ATM取现手续费低</small></div>
+        <div class="info-card-value">泰铢（THB）<br><small style="color:var(--text-tertiary)">当地ATM取现手续费低</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🗣️</div>
         <div class="info-card-label">语言</div>
-        <div class="info-card-value">泰语为主<br><small style="color:var(--text2)">景区英语/中文通用</small></div>
+        <div class="info-card-value">泰语为主<br><small style="color:var(--text-tertiary)">景区英语/中文通用</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🕐</div>
         <div class="info-card-label">时区</div>
-        <div class="info-card-value">UTC+7<br><small style="color:var(--text2)">比北京时间慢1小时</small></div>
+        <div class="info-card-value">UTC+7<br><small style="color:var(--text-tertiary)">比北京时间慢1小时</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🌡️</div>
         <div class="info-card-label">天气</div>
-        <div class="info-card-value">33°C 晴（实时）<br><small style="color:var(--text2)">湿度61%，体感36°C，注意防晒</small></div>
+        <div class="info-card-value">33°C 晴（实时）<br><small style="color:var(--text-tertiary)">湿度61%，体感36°C，注意防晒</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🚨</div>
@@ -1553,17 +1580,17 @@
       <div class="info-card">
         <div class="info-card-icon">📱</div>
         <div class="info-card-label">打车 APP</div>
-        <div class="info-card-value">Grab<br><small style="color:var(--text2)">东南亚版Uber，强烈推荐</small></div>
+        <div class="info-card-value">Grab<br><small style="color:var(--text-tertiary)">东南亚版Uber，强烈推荐</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">🏨</div>
         <div class="info-card-label">订酒店</div>
-        <div class="info-card-value">Agoda / Booking<br><small style="color:var(--text2)">泰国资源丰富价格低</small></div>
+        <div class="info-card-value">Agoda / Booking<br><small style="color:var(--text-tertiary)">泰国资源丰富价格低</small></div>
       </div>
       <div class="info-card">
         <div class="info-card-icon">📡</div>
         <div class="info-card-label">手机网络</div>
-        <div class="info-card-value">AIS / True Move<br><small style="color:var(--text2)">机场购买约100铢/7天</small></div>
+        <div class="info-card-value">AIS / True Move<br><small style="color:var(--text-tertiary)">机场购买约100铢/7天</small></div>
       </div>
     </div>
   </section>
@@ -1611,5 +1638,6 @@
 
   sections.forEach(s => observer.observe(s));
 </script>
+
 </body>
 </html>
