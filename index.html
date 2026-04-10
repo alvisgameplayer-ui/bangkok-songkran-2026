@@ -399,6 +399,61 @@
       padding: 1rem;
       text-align: left;
       color: var(--secondary-gray);
+    }
+
+    /* Star Rating */
+    .stars {
+      display: inline-flex;
+      gap: 2px;
+      color: #fbbf24;
+    }
+    .stars::before {
+      content: '';
+      display: inline-flex;
+      gap: 2px;
+    }
+    .stars[data-rating="5"]::before {
+      content: '★★★★★';
+    }
+    .stars[data-rating="4"]::before {
+      content: '★★★★☆';
+    }
+    .stars[data-rating="3"]::before {
+      content: '★★★☆☆';
+    }
+    .stars[data-rating="2"]::before {
+      content: '★★☆☆☆';
+    }
+    .stars[data-rating="1"]::before {
+      content: '★☆☆☆☆';
+    }
+
+    /* Flame Level */
+    .flames {
+      display: inline-flex;
+      gap: 2px;
+      color: var(--rausch-red);
+    }
+    .flames::before {
+      content: '';
+      display: inline-flex;
+      gap: 2px;
+    }
+    .flames[data-level="5"]::before {
+      content: '●●●●●';
+    }
+    .flames[data-level="4"]::before {
+      content: '●●●●○';
+    }
+    .flames[data-level="3"]::before {
+      content: '●●●○○';
+    }
+    .flames[data-level="2"]::before {
+      content: '●●○○○';
+    }
+    .flames[data-level="1"]::before {
+      content: '●○○○○';
+    }
       font-weight: 600;
       font-size: 0.7rem;
       text-transform: uppercase;
@@ -1074,6 +1129,26 @@
     <symbol id="icon-lightbulb" viewBox="0 0 24 24">
       <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
     </symbol>
+    <!-- Star (filled) -->
+    <symbol id="icon-star" viewBox="0 0 24 24">
+      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+    </symbol>
+    <!-- Star (empty) -->
+    <symbol id="icon-star-empty" viewBox="0 0 24 24">
+      <path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
+    </symbol>
+    <!-- Flame -->
+    <symbol id="icon-flame" viewBox="0 0 24 24">
+      <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+    </symbol>
+    <!-- Close/X -->
+    <symbol id="icon-close" viewBox="0 0 24 24">
+      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+    </symbol>
+    <!-- Double Check -->
+    <symbol id="icon-check-double" viewBox="0 0 24 24">
+      <path d="M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"/>
+    </symbol>
   </defs>
 </svg>
 
@@ -1438,50 +1513,50 @@
         </thead>
         <tbody>
           <tr>
-            <td>🔥 是隆路</td>
-            <td>⭐⭐⭐⭐⭐</td>
-            <td>🔥🔥🔥🔥🔥</td>
-            <td>⚠️ 需注意</td>
+            <td><svg class="icon icon-sm" style="color:var(--rausch-red)"><use href="#icon-fire"/></svg> 是隆路</td>
+            <td><span class="stars" data-rating="5"></span></td>
+            <td><span class="flames" data-level="5"></span></td>
+            <td><svg class="icon icon-sm" style="color:#f59e0b"><use href="#icon-warning"/></svg> 需注意</td>
             <td style="color:#00a699">免费</td>
             <td>派对狂人</td>
           </tr>
           <tr>
-            <td>🎒 考山路</td>
-            <td>⭐⭐⭐⭐</td>
-            <td>🔥🔥🔥🔥</td>
-            <td>⚠️ 需注意</td>
+            <td><svg class="icon icon-sm" style="color:#8b5cf6"><use href="#icon-backpack"/></svg> 考山路</td>
+            <td><span class="stars" data-rating="4"></span></td>
+            <td><span class="flames" data-level="4"></span></td>
+            <td><svg class="icon icon-sm" style="color:#f59e0b"><use href="#icon-warning"/></svg> 需注意</td>
             <td style="color:#00a699">免费</td>
             <td>背包客</td>
           </tr>
           <tr>
-            <td>🏛️ 皇家田广场</td>
-            <td>⭐⭐⭐⭐</td>
-            <td>🔥🔥</td>
-            <td>✅ 友好</td>
+            <td><svg class="icon icon-sm" style="color:#f59e0b"><use href="#icon-monument"/></svg> 皇家田广场</td>
+            <td><span class="stars" data-rating="4"></span></td>
+            <td><span class="flames" data-level="2"></span></td>
+            <td><svg class="icon icon-sm" style="color:#22c55e"><use href="#icon-check"/></svg> 友好</td>
             <td style="color:#00a699">免费</td>
             <td>文化体验</td>
           </tr>
           <tr>
-            <td>🏙️ CentralWorld</td>
-            <td>⭐⭐⭐</td>
-            <td>🔥🔥🔥</td>
-            <td>✅ 友好</td>
+            <td><svg class="icon icon-sm" style="color:#3b82f6"><use href="#icon-building"/></svg> CentralWorld</td>
+            <td><span class="stars" data-rating="3"></span></td>
+            <td><span class="flames" data-level="3"></span></td>
+            <td><svg class="icon icon-sm" style="color:#22c55e"><use href="#icon-check"/></svg> 友好</td>
             <td style="color:#00a699">免费</td>
             <td>都市游客</td>
           </tr>
           <tr>
-            <td>🌊 ICONSIAM</td>
-            <td>⭐⭐⭐</td>
-            <td>🔥🔥</td>
-            <td>✅✅ 非常友好</td>
+            <td><svg class="icon icon-sm" style="color:#06b6d4"><use href="#icon-waves"/></svg> ICONSIAM</td>
+            <td><span class="stars" data-rating="3"></span></td>
+            <td><span class="flames" data-level="2"></span></td>
+            <td><svg class="icon icon-sm" style="color:#22c55e"><use href="#icon-check-double"/></svg> 非常友好</td>
             <td style="color:#00a699">免费</td>
             <td>家庭/情侣</td>
           </tr>
           <tr>
-            <td>🎵 S2O/SIAM</td>
-            <td>⭐⭐⭐⭐⭐</td>
-            <td>🔥🔥🔥🔥🔥</td>
-            <td>❌ 不适合</td>
+            <td><svg class="icon icon-sm" style="color:#a855f7"><use href="#icon-music"/></svg> S2O/SIAM</td>
+            <td><span class="stars" data-rating="5"></span></td>
+            <td><span class="flames" data-level="5"></span></td>
+            <td><svg class="icon icon-sm" style="color:#ef4444"><use href="#icon-close"/></svg> 不适合</td>
             <td style="color:#ff385c">付费</td>
             <td>EDM爱好者</td>
           </tr>
