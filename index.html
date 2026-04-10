@@ -5,30 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>2026年泰国曼谷泼水节游玩攻略</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;350;400;450;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
     :root {
-      --black: #000000;
-      --white: #ffffff;
-      --glass-dark: rgba(0, 0, 0, 0.08);
-      --glass-light: rgba(255, 255, 255, 0.16);
-      --text-secondary: rgba(0, 0, 0, 0.6);
-      --text-tertiary: rgba(0, 0, 0, 0.4);
-      --border: rgba(0, 0, 0, 0.1);
+      /* Airbnb Color Palette */
+      --rausch-red: #ff385c;
+      --deep-rausch: #e00b41;
+      --near-black: #222222;
+      --secondary-gray: #6a6a6a;
+      --border-gray: #c1c1c1;
+      --light-surface: #f2f2f2;
+      --pure-white: #ffffff;
+      --luxe-purple: #460479;
+      --plus-magenta: #92174d;
+      
+      /* Shadows - Airbnb 3-layer system */
+      --shadow-card: rgba(0,0,0,0.02) 0px 0px 0px 1px, rgba(0,0,0,0.04) 0px 2px 6px, rgba(0,0,0,0.1) 0px 4px 8px;
+      --shadow-hover: rgba(0,0,0,0.08) 0px 4px 12px;
+      --shadow-focus: rgb(255,255,255) 0px 0px 0px 4px;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: var(--white);
-      color: var(--black);
+      background: var(--pure-white);
+      color: var(--near-black);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
-      letter-spacing: -0.14px;
     }
+
+    /* ===== SVG ICONS ===== */
+    .icon {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .icon-lg { width: 32px; height: 32px; }
+    .icon-xl { width: 48px; height: 48px; }
+    .icon-sm { width: 18px; height: 18px; }
 
     /* ===== HERO ===== */
     .hero {
@@ -40,13 +57,11 @@
       text-align: center;
       overflow: hidden;
       background: linear-gradient(135deg, 
-        #00d26a 0%, 
-        #f5e600 25%, 
-        #a855f7 50%, 
-        #ec4899 75%,
-        #00d26a 100%);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
+        #00a699 0%, 
+        #ff5a5f 50%,
+        #fc642d 100%);
+      background-size: 200% 200%;
+      animation: gradientShift 20s ease infinite;
     }
 
     @keyframes gradientShift {
@@ -58,7 +73,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='40' cy='40' r='3'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       pointer-events: none;
     }
 
@@ -70,35 +85,38 @@
     }
 
     .hero-badge {
-      display: inline-block;
-      background: var(--white);
-      color: var(--black);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--pure-white);
+      color: var(--near-black);
       font-size: 0.75rem;
-      font-weight: 500;
+      font-weight: 600;
       letter-spacing: 0.6px;
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 50px;
       margin-bottom: 2rem;
       text-transform: uppercase;
+      box-shadow: var(--shadow-card);
     }
 
     .hero h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 400;
-      color: var(--white);
-      line-height: 1.05;
-      letter-spacing: -1.72px;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 700;
+      color: var(--pure-white);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
       margin-bottom: 1.5rem;
     }
 
     .hero-sub {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      color: var(--white);
+      font-size: clamp(1rem, 2vw, 1.35rem);
+      color: var(--pure-white);
       opacity: 0.95;
       max-width: 600px;
       margin: 0 auto 2.5rem;
-      font-weight: 350;
-      line-height: 1.5;
+      font-weight: 400;
+      line-height: 1.6;
     }
 
     .hero-dates {
@@ -109,14 +127,17 @@
     }
 
     .date-chip {
-      background: var(--glass-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.95);
       backdrop-filter: blur(10px);
-      color: var(--white);
-      padding: 0.6rem 1.2rem;
+      color: var(--near-black);
+      padding: 0.7rem 1.3rem;
       border-radius: 50px;
       font-size: 0.9rem;
-      font-weight: 450;
-      border: 1px solid rgba(255,255,255,0.2);
+      font-weight: 500;
+      box-shadow: var(--shadow-card);
     }
 
     /* ===== NAV ===== */
@@ -124,9 +145,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       padding: 0.75rem 1rem;
     }
 
@@ -142,30 +163,24 @@
     .nav-btn {
       background: transparent;
       border: none;
-      color: var(--text-secondary);
-      padding: 0.5rem 1rem;
+      color: var(--secondary-gray);
+      padding: 0.6rem 1rem;
       border-radius: 50px;
       font-size: 0.85rem;
-      font-weight: 450;
+      font-weight: 500;
       cursor: pointer;
       transition: all 0.2s;
       font-family: inherit;
-      letter-spacing: -0.1px;
     }
 
     .nav-btn:hover {
-      color: var(--black);
-      background: var(--glass-dark);
+      color: var(--near-black);
+      background: var(--light-surface);
     }
 
     .nav-btn.active {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .nav-btn:focus {
-      outline: 2px dashed var(--black);
-      outline-offset: 2px;
+      background: var(--near-black);
+      color: var(--pure-white);
     }
 
     /* ===== MAIN ===== */
@@ -182,22 +197,21 @@
     }
 
     .section-label {
-      font-family: 'SF Mono', Monaco, monospace;
       font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.6px;
+      font-weight: 600;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      color: var(--text-tertiary);
+      color: var(--rausch-red);
       margin-bottom: 0.75rem;
     }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      letter-spacing: -0.96px;
-      line-height: 1.1;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
       margin-bottom: 2.5rem;
-      color: var(--black);
+      color: var(--near-black);
     }
 
     /* ===== OVERVIEW GRID ===== */
@@ -208,46 +222,46 @@
     }
 
     .overview-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
       padding: 1.5rem;
       display: flex;
       gap: 1rem;
       align-items: flex-start;
       transition: all 0.2s;
+      box-shadow: var(--shadow-card);
     }
 
     .overview-item:hover {
-      border-color: var(--black);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
 
     .overview-item-icon { 
-      font-size: 1.5rem; 
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--glass-dark);
+      background: var(--light-surface);
       border-radius: 50%;
+      color: var(--rausch-red);
     }
 
     .overview-item-label {
-      font-family: 'SF Mono', Monaco, monospace;
-      font-size: 0.7rem;
-      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      color: var(--secondary-gray);
       margin-bottom: 0.3rem;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.8px;
+      font-weight: 600;
     }
 
     .overview-item-value {
       font-size: 0.95rem;
-      color: var(--black);
-      font-weight: 450;
+      color: var(--near-black);
+      font-weight: 500;
       line-height: 1.5;
     }
 
@@ -259,16 +273,16 @@
     }
 
     .zone-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
       overflow: hidden;
       transition: all 0.25s;
+      box-shadow: var(--shadow-card);
     }
 
     .zone-card:hover {
-      border-color: var(--black);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-4px);
     }
 
@@ -279,48 +293,47 @@
       gap: 1rem;
     }
 
-    .zone-emoji {
-      font-size: 2rem;
-      width: 48px;
-      height: 48px;
+    .zone-icon {
+      width: 56px;
+      height: 56px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      background: var(--glass-dark);
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--rausch-red), var(--deep-rausch));
+      color: var(--pure-white);
       flex-shrink: 0;
     }
 
     .zone-name { 
       font-size: 1.15rem; 
       font-weight: 600; 
-      color: var(--black);
+      color: var(--near-black);
       letter-spacing: -0.3px;
     }
     .zone-en { 
       font-size: 0.8rem; 
-      color: var(--text-tertiary); 
+      color: var(--secondary-gray); 
       margin-top: 0.2rem;
-      font-weight: 350;
+      font-weight: 400;
     }
 
     .zone-badge {
       margin-left: auto;
       font-size: 0.7rem;
-      padding: 0.3rem 0.8rem;
+      padding: 0.4rem 0.9rem;
       border-radius: 50px;
-      font-weight: 500;
+      font-weight: 600;
       flex-shrink: 0;
-      font-family: 'SF Mono', Monaco, monospace;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.5px;
     }
 
-    .badge-free { background: rgba(0, 210, 106, 0.1); color: #00a854; border: 1px solid rgba(0, 210, 106, 0.2); }
-    .badge-paid { background: rgba(245, 158, 11, 0.1); color: #d97706; border: 1px solid rgba(245, 158, 11, 0.2); }
+    .badge-free { background: rgba(0, 166, 153, 0.1); color: #00a699; }
+    .badge-paid { background: rgba(255, 56, 92, 0.1); color: var(--rausch-red); }
 
     .zone-divider {
       height: 1px;
-      background: var(--border);
+      background: rgba(0,0,0,0.06);
       margin: 0 1.5rem;
     }
 
@@ -335,41 +348,41 @@
     }
 
     .zone-info-icon { 
-      color: var(--text-tertiary); 
+      color: var(--secondary-gray); 
       flex-shrink: 0; 
       margin-top: 0.15rem;
-      font-size: 0.85rem;
     }
     .zone-info-text { 
-      color: var(--text-secondary);
+      color: var(--secondary-gray);
       line-height: 1.5;
     }
     .zone-info-text strong { 
-      color: var(--black);
-      font-weight: 500;
+      color: var(--near-black);
+      font-weight: 600;
     }
 
     .zone-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.4rem;
+      gap: 0.5rem;
       margin-top: 1rem;
     }
 
     .zone-tag {
       font-size: 0.72rem;
-      padding: 0.25rem 0.7rem;
+      padding: 0.35rem 0.8rem;
       border-radius: 50px;
-      background: var(--glass-dark);
-      color: var(--text-secondary);
-      font-weight: 450;
+      background: var(--light-surface);
+      color: var(--secondary-gray);
+      font-weight: 500;
     }
 
     /* ===== COMPARE TABLE ===== */
     .compare-table-wrap {
       overflow-x: auto;
-      border-radius: 8px;
-      border: 1px solid var(--border);
+      border-radius: 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-card);
     }
 
     table {
@@ -379,23 +392,22 @@
     }
 
     thead tr {
-      background: var(--glass-dark);
+      background: var(--light-surface);
     }
 
     th {
       padding: 1rem;
       text-align: left;
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.75rem;
+      color: var(--secondary-gray);
+      font-weight: 600;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 1px;
       white-space: nowrap;
-      font-family: 'SF Mono', Monaco, monospace;
     }
 
     tbody tr {
-      border-top: 1px solid var(--border);
+      border-top: 1px solid rgba(0,0,0,0.06);
       transition: background 0.15s;
     }
 
@@ -403,11 +415,11 @@
 
     td {
       padding: 0.9rem 1rem;
-      color: var(--black);
+      color: var(--near-black);
       vertical-align: middle;
     }
 
-    td:first-child { font-weight: 500; }
+    td:first-child { font-weight: 600; }
 
     /* ===== ITINERARY ===== */
     .itinerary-tabs {
@@ -419,27 +431,26 @@
 
     .itinerary-tab {
       background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(0,0,0,0.08);
+      color: var(--secondary-gray);
+      padding: 0.7rem 1.3rem;
       border-radius: 50px;
       cursor: pointer;
       font-size: 0.9rem;
       font-family: inherit;
-      font-weight: 450;
+      font-weight: 500;
       transition: all 0.2s;
-      letter-spacing: -0.1px;
     }
 
     .itinerary-tab:hover {
-      border-color: var(--black);
-      color: var(--black);
+      border-color: var(--near-black);
+      color: var(--near-black);
     }
 
     .itinerary-tab.active {
-      background: var(--black);
-      border-color: var(--black);
-      color: var(--white);
+      background: var(--near-black);
+      border-color: var(--near-black);
+      color: var(--pure-white);
     }
 
     .itinerary-panel { display: none; }
@@ -457,7 +468,7 @@
       top: 0;
       bottom: 0;
       width: 2px;
-      background: var(--border);
+      background: rgba(0,0,0,0.08);
       border-radius: 2px;
     }
 
@@ -470,36 +481,36 @@
       position: absolute;
       left: -2rem;
       top: 0.3rem;
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
-      background: var(--white);
-      border: 2px solid var(--black);
+      background: var(--pure-white);
+      border: 3px solid var(--rausch-red);
     }
 
     .timeline-day {
-      font-family: 'SF Mono', Monaco, monospace;
       font-size: 0.7rem;
-      color: var(--text-tertiary);
-      font-weight: 500;
+      color: var(--rausch-red);
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 1px;
       margin-bottom: 0.4rem;
     }
 
     .timeline-content {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.1rem 1.3rem;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
+      padding: 1.2rem 1.4rem;
       font-size: 0.92rem;
-      color: var(--text-secondary);
+      color: var(--secondary-gray);
       line-height: 1.6;
+      box-shadow: var(--shadow-card);
     }
 
     .timeline-content strong { 
-      color: var(--black);
-      font-weight: 500;
+      color: var(--near-black);
+      font-weight: 600;
     }
 
     /* ===== GEAR GRID ===== */
@@ -510,45 +521,45 @@
     }
 
     .gear-cat {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
       padding: 1.5rem;
+      box-shadow: var(--shadow-card);
     }
 
     .gear-cat-title {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      color: var(--black);
+      color: var(--near-black);
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       letter-spacing: -0.2px;
     }
 
     .gear-item {
       display: flex;
       align-items: flex-start;
-      gap: 0.7rem;
-      margin-bottom: 0.7rem;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
       font-size: 0.88rem;
-      color: var(--text-secondary);
+      color: var(--secondary-gray);
     }
 
     .gear-check {
-      width: 18px;
-      height: 18px;
-      border-radius: 4px;
-      background: rgba(0, 210, 106, 0.1);
-      border: 1px solid rgba(0, 210, 106, 0.3);
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background: rgba(0, 166, 153, 0.1);
+      border: 1px solid rgba(0, 166, 153, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       margin-top: 0.1rem;
-      color: #00a854;
-      font-size: 0.7rem;
+      color: #00a699;
     }
 
     /* ===== TRANSPORT ===== */
@@ -559,24 +570,35 @@
     }
 
     .transport-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
       padding: 1.5rem 1rem;
       text-align: center;
       transition: all 0.2s;
+      box-shadow: var(--shadow-card);
     }
 
     .transport-card:hover { 
-      border-color: var(--black);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
 
-    .transport-icon { font-size: 1.8rem; margin-bottom: 0.6rem; }
+    .transport-icon { 
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-surface);
+      border-radius: 50%;
+      color: var(--rausch-red);
+    }
     .transport-name { 
       font-size: 0.88rem; 
       font-weight: 600; 
-      color: var(--black); 
+      color: var(--near-black); 
       margin-bottom: 0.3rem;
       letter-spacing: -0.2px;
     }
@@ -587,18 +609,22 @@
     }
     .transport-desc { 
       font-size: 0.78rem; 
-      color: var(--text-tertiary);
+      color: var(--secondary-gray);
       line-height: 1.4;
     }
 
     .transport-card.best { 
-      border-color: var(--black);
-      background: var(--black);
+      border-color: var(--near-black);
+      background: var(--near-black);
     }
     .transport-card.best .transport-name,
-    .transport-card.best .transport-desc { color: var(--white); }
+    .transport-card.best .transport-desc { color: var(--pure-white); }
+    .transport-card.best .transport-icon { 
+      background: rgba(255,255,255,0.15);
+      color: var(--pure-white);
+    }
 
-    .transport-card.warn { border-color: rgba(239, 68, 68, 0.3); }
+    .transport-card.warn { border-color: rgba(255, 56, 92, 0.3); }
 
     /* ===== BUDGET ===== */
     .budget-wrap {
@@ -612,10 +638,11 @@
     }
 
     .budget-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
       padding: 1.5rem;
+      box-shadow: var(--shadow-card);
     }
 
     .budget-title {
@@ -624,7 +651,7 @@
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       letter-spacing: -0.2px;
     }
 
@@ -632,23 +659,22 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid var(--border);
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
       font-size: 0.88rem;
     }
 
     .budget-item:last-child { border-bottom: none; }
-    .budget-item-name { color: var(--text-secondary); }
+    .budget-item-name { color: var(--secondary-gray); }
     .budget-item-val { 
-      font-weight: 500; 
-      color: var(--black);
-      font-family: 'SF Mono', Monaco, monospace;
+      font-weight: 600; 
+      color: var(--near-black);
     }
 
     .budget-total {
       margin-top: 1.2rem;
       padding: 1rem;
-      border-radius: 8px;
+      border-radius: 16px;
       text-align: center;
       font-size: 1.1rem;
       font-weight: 600;
@@ -656,14 +682,12 @@
     }
 
     .budget-econ .budget-total { 
-      background: rgba(0, 210, 106, 0.1); 
-      color: #00a854; 
-      border: 1px solid rgba(0, 210, 106, 0.2);
+      background: rgba(0, 166, 153, 0.1); 
+      color: #00a699; 
     }
     .budget-comf .budget-total { 
-      background: rgba(168, 85, 247, 0.1); 
-      color: #7c3aed;
-      border: 1px solid rgba(168, 85, 247, 0.2);
+      background: rgba(255, 56, 92, 0.1); 
+      color: var(--rausch-red);
     }
 
     /* ===== TIPS / SAFETY ===== */
@@ -674,68 +698,76 @@
     }
 
     .tip-card {
-      background: var(--white);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border-radius: 20px;
       padding: 1.5rem;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: var(--shadow-card);
     }
 
     .tip-card-title {
-      font-size: 0.92rem;
+      font-size: 0.95rem;
       font-weight: 600;
-      color: var(--black);
+      color: var(--near-black);
       margin-bottom: 1.2rem;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       letter-spacing: -0.2px;
     }
 
     .tip-item {
       font-size: 0.86rem;
-      color: var(--text-secondary);
-      margin-bottom: 0.6rem;
-      padding-left: 1.1rem;
+      color: var(--secondary-gray);
+      margin-bottom: 0.7rem;
+      padding-left: 1.3rem;
       position: relative;
       line-height: 1.5;
     }
 
     .tip-item::before {
-      content: '→';
+      content: '';
       position: absolute;
       left: 0;
-      color: var(--text-tertiary);
-      font-size: 0.75rem;
+      top: 0.5rem;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rausch-red);
     }
 
     /* ===== FAQ ===== */
     .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .faq-item {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 16px;
       overflow: hidden;
       cursor: pointer;
-      transition: border-color 0.2s;
+      transition: all 0.2s;
+      box-shadow: var(--shadow-card);
     }
 
-    .faq-item:hover { border-color: var(--black); }
+    .faq-item:hover { 
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0,0,0,0.12);
+    }
 
     .faq-q {
       padding: 1.2rem 1.3rem;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      color: var(--black);
+      color: var(--near-black);
       gap: 1rem;
       letter-spacing: -0.2px;
     }
 
     .faq-arrow {
-      color: var(--text-tertiary);
+      color: var(--secondary-gray);
       font-size: 0.75rem;
       transition: transform 0.3s;
       flex-shrink: 0;
@@ -754,7 +786,7 @@
     .faq-a-inner {
       padding: 0 1.3rem 1.2rem;
       font-size: 0.88rem;
-      color: var(--text-secondary);
+      color: var(--secondary-gray);
       line-height: 1.7;
     }
 
@@ -766,31 +798,42 @@
     }
 
     .info-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.3rem;
+      background: var(--pure-white);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
       transition: all 0.2s;
+      box-shadow: var(--shadow-card);
     }
 
     .info-card:hover { 
-      border-color: var(--black);
+      box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
     }
 
-    .info-card-icon { font-size: 1.4rem; margin-bottom: 0.7rem; }
+    .info-card-icon { 
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-surface);
+      border-radius: 12px;
+      color: var(--rausch-red);
+      margin-bottom: 0.8rem;
+    }
     .info-card-label { 
-      font-family: 'SF Mono', Monaco, monospace;
       font-size: 0.7rem; 
-      color: var(--text-tertiary); 
+      color: var(--secondary-gray); 
       text-transform: uppercase; 
-      letter-spacing: 0.6px; 
-      margin-bottom: 0.3rem; 
+      letter-spacing: 1px; 
+      margin-bottom: 0.4rem; 
+      font-weight: 600;
     }
     .info-card-value { 
       font-size: 0.9rem; 
-      color: var(--black); 
-      font-weight: 500;
+      color: var(--near-black); 
+      font-weight: 600;
       line-height: 1.4;
     }
 
@@ -798,24 +841,24 @@
     footer {
       text-align: center;
       padding: 4rem 2rem;
-      color: var(--text-tertiary);
+      color: var(--secondary-gray);
       font-size: 0.8rem;
-      border-top: 1px solid var(--border);
-      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.06);
+      background: var(--pure-white);
     }
 
     footer a { 
-      color: var(--black); 
+      color: var(--near-black); 
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* ===== ALERT BOX ===== */
     .alert {
-      border-radius: 8px;
+      border-radius: 16px;
       padding: 1rem 1.2rem;
       display: flex;
-      gap: 0.7rem;
+      gap: 0.8rem;
       align-items: flex-start;
       margin-top: 1rem;
       font-size: 0.88rem;
@@ -823,48 +866,239 @@
     }
 
     .alert-info { 
-      background: rgba(14, 165, 233, 0.05); 
-      border-color: rgba(14, 165, 233, 0.2); 
-      color: #0284c7; 
+      background: rgba(66, 139, 255, 0.05); 
+      border-color: rgba(66, 139, 255, 0.2); 
+      color: #428bff; 
     }
     .alert-warn { 
-      background: rgba(245, 158, 11, 0.05); 
-      border-color: rgba(245, 158, 11, 0.2); 
-      color: #d97706; 
+      background: rgba(252, 100, 45, 0.05); 
+      border-color: rgba(252, 100, 45, 0.2); 
+      color: #fc642d; 
     }
     .alert-tip { 
-      background: rgba(0, 210, 106, 0.05); 
-      border-color: rgba(0, 210, 106, 0.2); 
-      color: #00a854; 
+      background: rgba(0, 166, 153, 0.05); 
+      border-color: rgba(0, 166, 153, 0.2); 
+      color: #00a699; 
     }
 
-    .alert-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.05rem; }
+    .alert-icon { 
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0; 
+      margin-top: 0.05rem;
+    }
     .alert-text { line-height: 1.6; }
-    .alert-text strong { color: var(--black); }
+    .alert-text strong { color: var(--near-black); }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .zone-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.5rem; letter-spacing: -1px; }
+      .hero h1 { font-size: 2.2rem; letter-spacing: -1px; }
       main { padding: 3rem 1rem; }
       .section { margin-bottom: 4rem; }
       .nav-inner { gap: 0.3rem; }
-      .nav-btn { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+      .nav-btn { padding: 0.5rem 0.9rem; font-size: 0.8rem; }
     }
   </style>
 </head>
 <body>
 
+<!-- SVG Icons Library -->
+<svg style="display:none">
+  <defs>
+    <!-- Trophy/UNESCO -->
+    <symbol id="icon-trophy" viewBox="0 0 24 24">
+      <path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6-4.8-6 4.8 2.4-7.2-6-4.8h7.6z"/>
+    </symbol>
+    <!-- Calendar -->
+    <symbol id="icon-calendar" viewBox="0 0 24 24">
+      <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+    </symbol>
+    <!-- Party -->
+    <symbol id="icon-party" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+    </symbol>
+    <!-- Thermometer -->
+    <symbol id="icon-thermometer" viewBox="0 0 24 24">
+      <path d="M15 13V5c0-1.66-1.34-3-3-3S9 3.34 9 5v8c-1.21.91-2 2.37-2 4 0 2.76 2.24 5 5 5s5-2.24 5-5c0-1.63-.79-3.09-2-4zm-4-2V5c0-.55.45-1 1-1s1 .45 1 1v1h-1v1h1v5h-2z"/>
+    </symbol>
+    <!-- Book -->
+    <symbol id="icon-book" viewBox="0 0 24 24">
+      <path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/>
+    </symbol>
+    <!-- Pray -->
+    <symbol id="icon-pray" viewBox="0 0 24 24">
+      <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+    </symbol>
+    <!-- Water Drop -->
+    <symbol id="icon-water" viewBox="0 0 24 24">
+      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8zm0 18c-3.15 0-6-2.38-6-6.2 0-2.34 1.78-5.16 6-8.54 4.22 3.38 6 6.2 6 8.54 0 3.82-2.85 6.2-6 6.2z"/>
+    </symbol>
+    <!-- Fire -->
+    <symbol id="icon-fire" viewBox="0 0 24 24">
+      <path d="M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z"/>
+    </symbol>
+    <!-- Backpack -->
+    <symbol id="icon-backpack" viewBox="0 0 24 24">
+      <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/>
+    </symbol>
+    <!-- Building -->
+    <symbol id="icon-building" viewBox="0 0 24 24">
+      <path d="M15 11V5l-3-3-3 3v2H3v14h18V11h-6zm-8 8H5v-2h2v2zm0-4H5v-2h2v2zm0-4H5V9h2v2zm6 8h-2v-2h2v2zm0-4h-2v-2h2v2zm0-4h-2V9h2v2zm0-4h-2V5h2v2zm6 12h-2v-2h2v2zm0-4h-2v-2h2v2z"/>
+    </symbol>
+    <!-- Monument -->
+    <symbol id="icon-monument" viewBox="0 0 24 24">
+      <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/>
+    </symbol>
+    <!-- Waves -->
+    <symbol id="icon-waves" viewBox="0 0 24 24">
+      <path d="M17 16.99c-1.35 0-2.2.42-2.95.8-.65.33-1.18.6-2.05.6-.9 0-1.4-.25-2.05-.6-.75-.38-1.57-.8-2.95-.8s-2.2.42-2.95.8c-.65.33-1.17.6-2.05.6v1.95c1.35 0 2.2-.42 2.95-.8.65-.33 1.17-.6 2.05-.6s1.4.25 2.05.6c.75.38 1.57.8 2.95.8s2.2-.42 2.95-.8c.65-.33 1.18-.6 2.05-.6.9 0 1.4.25 2.05.6.75.38 1.58.8 2.95.8v-1.95c-.9 0-1.4-.25-2.05-.6-.75-.38-1.6-.8-2.95-.8zm0-4.45c-1.35 0-2.2.43-2.95.8-.65.32-1.18.6-2.05.6-.9 0-1.4-.25-2.05-.6-.75-.38-1.57-.8-2.95-.8s-2.2.43-2.95.8c-.65.32-1.17.6-2.05.6v1.95c1.35 0 2.2-.43 2.95-.8.65-.35 1.15-.6 2.05-.6s1.4.25 2.05.6c.75.38 1.57.8 2.95.8s2.2-.43 2.95-.8c.65-.35 1.15-.6 2.05-.6s1.4.25 2.05.6c.75.38 1.58.8 2.95.8v-1.95c-.9 0-1.4-.25-2.05-.6-.75-.38-1.6-.8-2.95-.8zM17 8.1c-1.35 0-2.2.43-2.95.8-.65.32-1.18.6-2.05.6-.9 0-1.4-.25-2.05-.6-.75-.38-1.57-.8-2.95-.8s-2.2.43-2.95.8c-.65.32-1.17.6-2.05.6v1.95c1.35 0 2.2-.43 2.95-.8.65-.35 1.15-.6 2.05-.6s1.4.25 2.05.6c.75.38 1.57.8 2.95.8s2.2-.43 2.95-.8c.65-.35 1.15-.6 2.05-.6s1.4.25 2.05.6c.75.38 1.58.8 2.95.8V9.5c-.9 0-1.4-.25-2.05-.6-.75-.38-1.6-.8-2.95-.8z"/>
+    </symbol>
+    <!-- Music -->
+    <symbol id="icon-music" viewBox="0 0 24 24">
+      <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+    </symbol>
+    <!-- Location -->
+    <symbol id="icon-location" viewBox="0 0 24 24">
+      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </symbol>
+    <!-- Clock -->
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    </symbol>
+    <!-- Train -->
+    <symbol id="icon-train" viewBox="0 0 24 24">
+      <path d="M12 2c-4 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h2l2-2h4l2 2h2v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-6H6V6h5v5zm2 0V6h5v5h-5zm3.5 6c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </symbol>
+    <!-- Sparkle -->
+    <symbol id="icon-sparkle" viewBox="0 0 24 24">
+      <path d="M7 2v11h3v9l7-12h-4l4-8z"/>
+    </symbol>
+    <!-- Ticket -->
+    <symbol id="icon-ticket" viewBox="0 0 24 24">
+      <path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2zm-2-1.46c-1.19.69-2 1.99-2 3.46s.81 2.77 2 3.46V18H4v-2.54c1.19-.69 2-1.99 2-3.46 0-1.48-.8-2.77-1.99-3.46L4 6h16v2.54z"/>
+    </symbol>
+    <!-- Passport -->
+    <symbol id="icon-passport" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+    </symbol>
+    <!-- Document -->
+    <symbol id="icon-document" viewBox="0 0 24 24">
+      <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+    </symbol>
+    <!-- Plane -->
+    <symbol id="icon-plane" viewBox="0 0 24 24">
+      <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/>
+    </symbol>
+    <!-- Shield -->
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+    </symbol>
+    <!-- Tshirt -->
+    <symbol id="icon-tshirt" viewBox="0 0 24 24">
+      <path d="M16 2l5 5-2 2-3-3v12h-2V6l-3 3-2-2 5-5h2zM8 2l-5 5 2 2 3-3v12h2V6l3 3 2-2-5-5H8z"/>
+    </symbol>
+    <!-- Gamepad -->
+    <symbol id="icon-gamepad" viewBox="0 0 24 24">
+      <path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </symbol>
+    <!-- Credit Card -->
+    <symbol id="icon-card" viewBox="0 0 24 24">
+      <path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
+    </symbol>
+    <!-- Train/BTS -->
+    <symbol id="icon-bts" viewBox="0 0 24 24">
+      <path d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4S4 2.5 4 6v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/>
+    </symbol>
+    <!-- Phone/App -->
+    <symbol id="icon-phone" viewBox="0 0 24 24">
+      <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/>
+    </symbol>
+    <!-- Tuk Tuk -->
+    <symbol id="icon-tuktuk" viewBox="0 0 24 24">
+      <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+    </symbol>
+    <!-- Taxi -->
+    <symbol id="icon-taxi" viewBox="0 0 24 24">
+      <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+    </symbol>
+    <!-- Motorcycle -->
+    <symbol id="icon-moto" viewBox="0 0 24 24">
+      <path d="M17.5 10c-.03 0-.05.01-.08.01L13.41 6H9v2h3.59l2 2h-7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5c0-.93-.26-1.79-.71-2.53l3.08-3.08c.34.23.74.36 1.13.36 1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5zM6.5 18c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+    </symbol>
+    <!-- Droplet -->
+    <symbol id="icon-droplet" viewBox="0 0 24 24">
+      <path d="M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z"/>
+    </symbol>
+    <!-- Wallet -->
+    <symbol id="icon-wallet" viewBox="0 0 24 24">
+      <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+    </symbol>
+    <!-- Chat -->
+    <symbol id="icon-chat" viewBox="0 0 24 24">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+    </symbol>
+    <!-- Clock/Time -->
+    <symbol id="icon-timezone" viewBox="0 0 24 24">
+      <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+    </symbol>
+    <!-- Emergency -->
+    <symbol id="icon-emergency" viewBox="0 0 24 24">
+      <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 16h2v2h-2zm0-6h2v4h-2z"/>
+    </symbol>
+    <!-- Hotel -->
+    <symbol id="icon-hotel" viewBox="0 0 24 24">
+      <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/>
+    </symbol>
+    <!-- Wifi -->
+    <symbol id="icon-wifi" viewBox="0 0 24 24">
+      <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+    </symbol>
+    <!-- Check -->
+    <symbol id="icon-check" viewBox="0 0 24 24">
+      <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+    </symbol>
+    <!-- Chevron Down -->
+    <symbol id="icon-chevron" viewBox="0 0 24 24">
+      <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+    </symbol>
+    <!-- Warning -->
+    <symbol id="icon-warning" viewBox="0 0 24 24">
+      <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+    </symbol>
+    <!-- Info -->
+    <symbol id="icon-info" viewBox="0 0 24 24">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+    </symbol>
+    <!-- Lightbulb -->
+    <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+      <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6C7.8 12.16 7 10.63 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge">🏆 UNESCO 非物质文化遗产</div>
+    <div class="hero-badge">
+      <svg class="icon icon-sm"><use href="#icon-trophy"/></svg>
+      UNESCO 非物质文化遗产
+    </div>
     <h1>2026年泰国曼谷<br>泼水节游玩攻略</h1>
     <p class="hero-sub">宋干节（Songkran）— 一年一度的湿身盛典，泰国最盛大的传统新年庆典，带你感受全城水战的极致狂欢</p>
     <div class="hero-dates">
-      <div class="date-chip">📅 官方节日：4月13–15日</div>
-      <div class="date-chip">🎉 曼谷狂欢：4月11–16日</div>
-      <div class="date-chip">🌡️ 气温：33°C（实时）</div>
+      <div class="date-chip">
+        <svg class="icon icon-sm"><use href="#icon-calendar"/></svg>
+        官方节日：4月13–15日
+      </div>
+      <div class="date-chip">
+        <svg class="icon icon-sm"><use href="#icon-party"/></svg>
+        曼谷狂欢：4月11–16日
+      </div>
+      <div class="date-chip">
+        <svg class="icon icon-sm"><use href="#icon-thermometer"/></svg>
+        气温：33°C（实时）
+      </div>
     </div>
   </div>
 </section>
@@ -894,42 +1128,54 @@
     <h2 class="section-title">节日概况</h2>
     <div class="overview-grid">
       <div class="overview-item">
-        <div class="overview-item-icon">📅</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-calendar"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">官方节日时间</div>
           <div class="overview-item-value">2026年4月13日（周一）— 4月15日（周三）</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">🎉</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-party"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">曼谷狂欢周期</div>
           <div class="overview-item-value">4月11日预热，持续至4月16日（约一周）</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">📖</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-book"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">节日起源</div>
           <div class="overview-item-value">宋干节源自梵语，意为"太阳进入新星座"，象征泰历新年开始</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">🙏</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-pray"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">核心习俗</div>
           <div class="overview-item-value">泼水祝福、浴佛仪式、花车游行、祭祖祈福</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">🏆</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-trophy"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">文化地位</div>
           <div class="overview-item-value">联合国教科文组织"人类非物质文化遗产"</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">💧</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-water"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">节日精神</div>
           <div class="overview-item-value">被泼水 = 接收祝福，水越多福气越多，不要躲！</div>
@@ -947,7 +1193,9 @@
       <!-- 是隆路 -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🔥</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-fire"/></svg>
+          </div>
           <div>
             <div class="zone-name">是隆路</div>
             <div class="zone-en">Silom Road — 规模最大水战战场</div>
@@ -957,19 +1205,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">Sala Daeng路口至Nararom路口，全长超 <strong>4公里封路</strong></div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">⏰</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-clock"/></svg>
             <div class="zone-info-text">最佳时段：<strong>下午1点–3点</strong>（水战最激烈）</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">BTS Sala Daeng站 / MRT Silom站</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">"全曼谷最冰的水"、EDM演唱会、彩虹Pride游行</div>
           </div>
           <div class="zone-tags">
@@ -983,7 +1231,9 @@
       <!-- 考山路 -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🎒</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-backpack"/></svg>
+          </div>
           <div>
             <div class="zone-name">考山路</div>
             <div class="zone-en">Khao San Road — 背包客天堂</div>
@@ -993,19 +1243,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">Phra Nakhon区，考山路全段</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">⏰</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-clock"/></svg>
             <div class="zone-info-text">最佳时段：<strong>上午11点起全天持续</strong></div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">MRT Sam Yot站 → 打车约10分钟</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">街头派对24小时不停，冰水+水枪齐上阵</div>
           </div>
           <div class="zone-tags">
@@ -1019,7 +1269,9 @@
       <!-- CentralWorld -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🏙️</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-building"/></svg>
+          </div>
           <div>
             <div class="zone-name">CentralWorld</div>
             <div class="zone-en">尚泰世界广场 — 都市派对中心</div>
@@ -1029,19 +1281,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">Ratchaprasong区，尚泰世界购物中心外广场</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">⏰</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-clock"/></svg>
             <div class="zone-info-text">最佳时段：<strong>下午至傍晚</strong></div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">BTS Chidlom站 / BTS Siam站</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">免费演唱会、大型喷水区、白天购物晚上狂欢</div>
           </div>
           <div class="zone-tags">
@@ -1054,7 +1306,9 @@
       <!-- 皇家田广场 -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🏛️</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-monument"/></svg>
+          </div>
           <div>
             <div class="zone-name">皇家田广场</div>
             <div class="zone-en">Sanam Luang — 官方主会场</div>
@@ -1064,19 +1318,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">大皇宫旁，拉查丹侬大道沿线</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">⏰</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-clock"/></svg>
             <div class="zone-info-text"><strong>花车游行</strong>：4月12–13日夜 ｜ <strong>无人机灯光秀</strong>：4月12–15日 19:00</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">BTS Saphan Taksin站 / 步行可达大皇宫</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">约1200架无人机灯光秀、公共浴佛仪式（每日06:00–09:00）</div>
           </div>
           <div class="zone-tags">
@@ -1090,7 +1344,9 @@
       <!-- ICONSIAM -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🌊</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-waves"/></svg>
+          </div>
           <div>
             <div class="zone-name">ICONSIAM</div>
             <div class="zone-en">湄南河畔 — 优雅庆典</div>
@@ -1100,19 +1356,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">昭披耶河边，ICONSIAM商场周边</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">⏰</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-clock"/></svg>
             <div class="zone-info-text">最佳时段：<strong>上午11点至下午</strong></div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">BTS Saphan Taksin站 → 免费接驳船</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">宋干女神游行、河畔免费音乐会、亲子泼水区</div>
           </div>
           <div class="zone-tags">
@@ -1126,7 +1382,9 @@
       <!-- S2O/SIAM -->
       <div class="zone-card">
         <div class="zone-card-header">
-          <div class="zone-emoji">🎵</div>
+          <div class="zone-icon">
+            <svg class="icon icon-xl"><use href="#icon-music"/></svg>
+          </div>
           <div>
             <div class="zone-name">S2O / SIAM Songkran</div>
             <div class="zone-en">Music Festival — 顶级电音水节</div>
@@ -1136,19 +1394,19 @@
         <div class="zone-divider"></div>
         <div class="zone-body">
           <div class="zone-info-row">
-            <div class="zone-info-icon">📍</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-location"/></svg>
             <div class="zone-info-text">S2O Land, Ratchadaphisek Rd ｜ Bravo BKK Arena</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🚇</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-train"/></svg>
             <div class="zone-info-text">MRT Thailand Cultural Centre站</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">✨</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-sparkle"/></svg>
             <div class="zone-info-text">2026主题：<strong>THE MELORA</strong> ｜ 阵容：Marshmello、Martin Garrix、John Summit</div>
           </div>
           <div class="zone-info-row">
-            <div class="zone-info-icon">🎫</div>
+            <svg class="icon icon-sm zone-info-icon"><use href="#icon-ticket"/></svg>
             <div class="zone-info-text">购票渠道：Ticketmelon / KKday</div>
           </div>
           <div class="zone-tags">
@@ -1184,7 +1442,7 @@
             <td>⭐⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥🔥</td>
             <td>⚠️ 需注意</td>
-            <td style="color:#00a854">免费</td>
+            <td style="color:#00a699">免费</td>
             <td>派对狂人</td>
           </tr>
           <tr>
@@ -1192,7 +1450,7 @@
             <td>⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥</td>
             <td>⚠️ 需注意</td>
-            <td style="color:#00a854">免费</td>
+            <td style="color:#00a699">免费</td>
             <td>背包客</td>
           </tr>
           <tr>
@@ -1200,7 +1458,7 @@
             <td>⭐⭐⭐⭐</td>
             <td>🔥🔥</td>
             <td>✅ 友好</td>
-            <td style="color:#00a854">免费</td>
+            <td style="color:#00a699">免费</td>
             <td>文化体验</td>
           </tr>
           <tr>
@@ -1208,7 +1466,7 @@
             <td>⭐⭐⭐</td>
             <td>🔥🔥🔥</td>
             <td>✅ 友好</td>
-            <td style="color:#00a854">免费</td>
+            <td style="color:#00a699">免费</td>
             <td>都市游客</td>
           </tr>
           <tr>
@@ -1216,7 +1474,7 @@
             <td>⭐⭐⭐</td>
             <td>🔥🔥</td>
             <td>✅✅ 非常友好</td>
-            <td style="color:#00a854">免费</td>
+            <td style="color:#00a699">免费</td>
             <td>家庭/情侣</td>
           </tr>
           <tr>
@@ -1224,7 +1482,7 @@
             <td>⭐⭐⭐⭐⭐</td>
             <td>🔥🔥🔥🔥🔥</td>
             <td>❌ 不适合</td>
-            <td style="color:#d97706">付费</td>
+            <td style="color:#ff385c">付费</td>
             <td>EDM爱好者</td>
           </tr>
         </tbody>
@@ -1304,28 +1562,36 @@
 
     <div class="overview-grid" style="margin-bottom:1.5rem">
       <div class="overview-item">
-        <div class="overview-item-icon">🛂</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-passport"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">签证政策</div>
           <div class="overview-item-value">中泰互免签证，免签入境（通常30天）</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">📘</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-document"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">护照要求</div>
           <div class="overview-item-value">入境时护照有效期需至少6个月</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">📝</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-document"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">入境卡</div>
           <div class="overview-item-value">泰国已取消纸质入境卡，到达直接办理</div>
         </div>
       </div>
       <div class="overview-item">
-        <div class="overview-item-icon">✈️</div>
+        <div class="overview-item-icon">
+          <svg class="icon icon-lg"><use href="#icon-plane"/></svg>
+        </div>
         <div>
           <div class="overview-item-label">机票建议</div>
           <div class="overview-item-value">提前2–3个月购票，往返参考价 ¥1500–3000</div>
@@ -1334,12 +1600,15 @@
     </div>
 
     <div class="alert alert-warn">
-      <div class="alert-icon">⚠️</div>
+      <svg class="icon alert-icon"><use href="#icon-warning"/></svg>
       <div class="alert-text">请出发前查看最新签证政策，以官方公告为准。</div>
     </div>
 
     <div style="margin-top:2rem">
-      <h3 style="color:var(--black);font-size:1rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">🏨 住宿推荐区域</h3>
+      <h3 style="color:var(--near-black);font-size:1rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">
+        <svg class="icon" style="vertical-align:middle;margin-right:8px;"><use href="#icon-hotel"/></svg>
+        住宿推荐区域
+      </h3>
       <div class="compare-table-wrap">
         <table>
           <thead>
@@ -1355,7 +1624,7 @@
       </div>
     </div>
     <div class="alert alert-tip" style="margin-top:1rem">
-      <div class="alert-icon">💡</div>
+      <svg class="icon alert-icon"><use href="#icon-lightbulb"/></svg>
       <div class="alert-text"><strong>重要提示：</strong>泼水节期间酒店价格翻倍，务必提前1–2个月预订！</div>
     </div>
   </section>
@@ -1366,31 +1635,43 @@
     <h2 class="section-title">必备装备清单</h2>
     <div class="gear-categories">
       <div class="gear-cat">
-        <div class="gear-cat-title">🛡️ 防水防晒类</div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>防水手机袋（必备，全程泡在水里）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>防水袋/干包（保护护照、钱包等贵重物品）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>护目镜（可选，防水枪射眼）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>高倍防晒霜 SPF50+（4月气温高达38°C）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>太阳镜 + 遮阳帽</div></div>
+        <div class="gear-cat-title">
+          <svg class="icon"><use href="#icon-shield"/></svg>
+          防水防晒类
+        </div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>防水手机袋（必备，全程泡在水里）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>防水袋/干包（保护护照、钱包等贵重物品）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>护目镜（可选，防水枪射眼）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>高倍防晒霜 SPF50+（4月气温高达38°C）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>太阳镜 + 遮阳帽</div></div>
       </div>
       <div class="gear-cat">
-        <div class="gear-cat-title">👕 衣物鞋履类</div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>快干衣物 2–3套（深色为佳，浅色湿水变透明）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>防滑凉鞋/拖鞋（街道湿滑，切勿穿新鞋）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>旧衣服（水战专用，不怕脏不怕湿）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>换洗备用衣物（活动后及时更换避免感冒）</div></div>
+        <div class="gear-cat-title">
+          <svg class="icon"><use href="#icon-tshirt"/></svg>
+          衣物鞋履类
+        </div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>快干衣物 2–3套（深色为佳，浅色湿水变透明）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>防滑凉鞋/拖鞋（街道湿滑，切勿穿新鞋）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>旧衣服（水战专用，不怕脏不怕湿）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>换洗备用衣物（活动后及时更换避免感冒）</div></div>
       </div>
       <div class="gear-cat">
-        <div class="gear-cat-title">🎮 娱乐装备类</div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>水枪（大号更刺激，当地购买约20–50铢）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>防水运动相机 / GoPro（记录狂欢时刻）</div></div>
+        <div class="gear-cat-title">
+          <svg class="icon"><use href="#icon-gamepad"/></svg>
+          娱乐装备类
+        </div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>水枪（大号更刺激，当地购买约20–50铢）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>防水运动相机 / GoPro（记录狂欢时刻）</div></div>
       </div>
       <div class="gear-cat">
-        <div class="gear-cat-title">💳 日常必备类</div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>泰铢现金（路边摊、嘟嘟车多不收卡）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>泰国本地SIM卡（AIS/True Move，机场可买，约100铢/7天）</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>小额零钱（20–100铢）用于小费</div></div>
-        <div class="gear-item"><div class="gear-check">✓</div><div>毛巾（随时擦干，多备一条）</div></div>
+        <div class="gear-cat-title">
+          <svg class="icon"><use href="#icon-card"/></svg>
+          日常必备类
+        </div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>泰铢现金（路边摊、嘟嘟车多不收卡）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>泰国本地SIM卡（AIS/True Move，机场可买，约100铢/7天）</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>小额零钱（20–100铢）用于小费</div></div>
+        <div class="gear-item"><div class="gear-check"><svg class="icon icon-sm"><use href="#icon-check"/></svg></div><div>毛巾（随时擦干，多备一条）</div></div>
       </div>
     </div>
   </section>
@@ -1399,40 +1680,56 @@
   <section class="section" id="transport">
     <div class="section-label">Transport</div>
     <h2 class="section-title">交通指南</h2>
-    <h3 style="color:var(--black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">📍 曼谷市内交通</h3>
+    <h3 style="color:var(--near-black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">
+      <svg class="icon" style="vertical-align:middle;margin-right:8px;"><use href="#icon-location"/></svg>
+      曼谷市内交通
+    </h3>
     <div class="transport-row" style="margin-bottom:2rem">
       <div class="transport-card best">
-        <div class="transport-icon">🚈</div>
+        <div class="transport-icon">
+          <svg class="icon icon-lg"><use href="#icon-bts"/></svg>
+        </div>
         <div class="transport-name">BTS轻轨 / MRT地铁</div>
         <div class="transport-rating">⭐⭐⭐⭐⭐</div>
         <div class="transport-desc">首选！节日期间全封路，地铁永远不堵车</div>
       </div>
       <div class="transport-card">
-        <div class="transport-icon">📱</div>
+        <div class="transport-icon">
+          <svg class="icon icon-lg"><use href="#icon-phone"/></svg>
+        </div>
         <div class="transport-name">Grab 网约车</div>
         <div class="transport-rating">⭐⭐⭐</div>
         <div class="transport-desc">节后高峰叫车难、价格涨，可提前预约</div>
       </div>
       <div class="transport-card">
-        <div class="transport-icon">🛺</div>
+        <div class="transport-icon">
+          <svg class="icon icon-lg"><use href="#icon-tuktuk"/></svg>
+        </div>
         <div class="transport-name">嘟嘟车</div>
         <div class="transport-rating">⭐⭐⭐</div>
         <div class="transport-desc">体验当地特色，记得砍价，短途首选</div>
       </div>
       <div class="transport-card">
-        <div class="transport-icon">🚕</div>
+        <div class="transport-icon">
+          <svg class="icon icon-lg"><use href="#icon-taxi"/></svg>
+        </div>
         <div class="transport-name">出租车</div>
         <div class="transport-rating">⭐⭐</div>
         <div class="transport-desc">容易堵车，需要打表，避开高峰期</div>
       </div>
       <div class="transport-card warn">
-        <div class="transport-icon">🏍️</div>
+        <div class="transport-icon">
+          <svg class="icon icon-lg"><use href="#icon-moto"/></svg>
+        </div>
         <div class="transport-name">摩托车</div>
         <div class="transport-rating">❌ 不推荐</div>
         <div class="transport-desc">节日期间道路混乱，非常危险，请勿乘坐</div>
       </div>
     </div>
-    <h3 style="color:var(--black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">🏖️ 曼谷 ↔ 芭提雅</h3>
+    <h3 style="color:var(--near-black);font-size:0.95rem;margin-bottom:1.2rem;font-weight:600;letter-spacing:-0.2px;">
+      <svg class="icon" style="vertical-align:middle;margin-right:8px;"><use href="#icon-waves"/></svg>
+      曼谷 ↔ 芭提雅
+    </h3>
     <div class="compare-table-wrap">
       <table>
         <thead><tr><th>交通方式</th><th>车程</th><th>费用参考</th></tr></thead>
@@ -1451,28 +1748,40 @@
     <h2 class="section-title">礼仪与安全须知</h2>
     <div class="tips-grid">
       <div class="tip-card">
-        <div class="tip-card-title">💧 泼水礼仪</div>
+        <div class="tip-card-title">
+          <svg class="icon"><use href="#icon-droplet"/></svg>
+          泼水礼仪
+        </div>
         <div class="tip-item">被泼水是祝福，越湿代表福气越多，不要生气抵触</div>
         <div class="tip-item">不可泼水对象：<strong>僧侣、老人、婴儿幼童</strong></div>
         <div class="tip-item">禁止使用：<strong>高压水枪</strong>（容易伤人）或脏水污水</div>
         <div class="tip-item">只使用洁净常温水，冰水应避免对老人使用</div>
       </div>
       <div class="tip-card">
-        <div class="tip-card-title">💼 财产安全</div>
+        <div class="tip-card-title">
+          <svg class="icon"><use href="#icon-wallet"/></svg>
+          财产安全
+        </div>
         <div class="tip-item">人群密集区域背包放胸前，防扒手</div>
         <div class="tip-item">贵重物品全部放入防水袋密封保护</div>
         <div class="tip-item">护照留在酒店保险柜，随身携带<strong>复印件</strong></div>
         <div class="tip-item">使用Grab打车，避免黑车宰客</div>
       </div>
       <div class="tip-card">
-        <div class="tip-card-title">🌡️ 健康安全</div>
+        <div class="tip-card-title">
+          <svg class="icon"><use href="#icon-thermometer"/></svg>
+          健康安全
+        </div>
         <div class="tip-item">玩水后及时更换干衣，避免受凉感冒</div>
         <div class="tip-item">多喝瓶装水，不喝路边泼水</div>
         <div class="tip-item">注意饮食卫生，路边摊谨慎选择</div>
         <div class="tip-item">节日气温极高（37–40°C），<strong>注意防暑降温</strong></div>
       </div>
       <div class="tip-card">
-        <div class="tip-card-title">🙏 寺庙参观礼仪</div>
+        <div class="tip-card-title">
+          <svg class="icon"><use href="#icon-pray"/></svg>
+          寺庙参观礼仪
+        </div>
         <div class="tip-item">进入寺庙需着<strong>长袖长裤或过膝裙</strong></div>
         <div class="tip-item">大皇宫、玉佛寺严格要求着装，不达标拒绝入场</div>
         <div class="tip-item">脱鞋后安静进入，保持肃穆</div>
@@ -1487,7 +1796,10 @@
     <h2 class="section-title">费用预算参考</h2>
     <div class="budget-wrap">
       <div class="budget-card budget-econ">
-        <div class="budget-title">🎒 经济型方案</div>
+        <div class="budget-title">
+          <svg class="icon"><use href="#icon-backpack"/></svg>
+          经济型方案
+        </div>
         <div class="budget-item"><span class="budget-item-name">往返机票</span><span class="budget-item-val">¥1,500</span></div>
         <div class="budget-item"><span class="budget-item-name">签证费</span><span class="budget-item-val">¥0（免签）</span></div>
         <div class="budget-item"><span class="budget-item-name">酒店（5晚）</span><span class="budget-item-val">¥1,000</span></div>
@@ -1498,7 +1810,10 @@
         <div class="budget-total">合计约 ¥5,000</div>
       </div>
       <div class="budget-card budget-comf">
-        <div class="budget-title">✨ 舒适型方案</div>
+        <div class="budget-title">
+          <svg class="icon"><use href="#icon-sparkle"/></svg>
+          舒适型方案
+        </div>
         <div class="budget-item"><span class="budget-item-name">往返机票</span><span class="budget-item-val">¥3,000</span></div>
         <div class="budget-item"><span class="budget-item-name">签证费</span><span class="budget-item-val">¥0（免签）</span></div>
         <div class="budget-item"><span class="budget-item-name">酒店（5晚）</span><span class="budget-item-val">¥3,000</span></div>
@@ -1510,7 +1825,7 @@
       </div>
     </div>
     <div class="alert alert-info" style="margin-top:1rem">
-      <div class="alert-icon">ℹ️</div>
+      <svg class="icon alert-icon"><use href="#icon-info"/></svg>
       <div class="alert-text">以上为单人费用，汇率参考：1人民币 ≈ 4.7–5泰铢</div>
     </div>
   </section>
@@ -1553,44 +1868,60 @@
     <h2 class="section-title">实用信息汇总</h2>
     <div class="info-cards">
       <div class="info-card">
-        <div class="info-card-icon">💱</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-card"/></svg>
+        </div>
         <div class="info-card-label">货币</div>
-        <div class="info-card-value">泰铢（THB）<br><small style="color:var(--text-tertiary)">当地ATM取现手续费低</small></div>
+        <div class="info-card-value">泰铢（THB）<br><small style="color:var(--secondary-gray)">当地ATM取现手续费低</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">🗣️</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-chat"/></svg>
+        </div>
         <div class="info-card-label">语言</div>
-        <div class="info-card-value">泰语为主<br><small style="color:var(--text-tertiary)">景区英语/中文通用</small></div>
+        <div class="info-card-value">泰语为主<br><small style="color:var(--secondary-gray)">景区英语/中文通用</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">🕐</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-timezone"/></svg>
+        </div>
         <div class="info-card-label">时区</div>
-        <div class="info-card-value">UTC+7<br><small style="color:var(--text-tertiary)">比北京时间慢1小时</small></div>
+        <div class="info-card-value">UTC+7<br><small style="color:var(--secondary-gray)">比北京时间慢1小时</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">🌡️</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-thermometer"/></svg>
+        </div>
         <div class="info-card-label">天气</div>
-        <div class="info-card-value">33°C 晴（实时）<br><small style="color:var(--text-tertiary)">湿度61%，体感36°C，注意防晒</small></div>
+        <div class="info-card-value">33°C 晴（实时）<br><small style="color:var(--secondary-gray)">湿度61%，体感36°C，注意防晒</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">🚨</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-emergency"/></svg>
+        </div>
         <div class="info-card-label">紧急电话</div>
         <div class="info-card-value">警察：191<br>旅游警察：1155</div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">📱</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-phone"/></svg>
+        </div>
         <div class="info-card-label">打车 APP</div>
-        <div class="info-card-value">Grab<br><small style="color:var(--text-tertiary)">东南亚版Uber，强烈推荐</small></div>
+        <div class="info-card-value">Grab<br><small style="color:var(--secondary-gray)">东南亚版Uber，强烈推荐</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">🏨</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-hotel"/></svg>
+        </div>
         <div class="info-card-label">订酒店</div>
-        <div class="info-card-value">Agoda / Booking<br><small style="color:var(--text-tertiary)">泰国资源丰富价格低</small></div>
+        <div class="info-card-value">Agoda / Booking<br><small style="color:var(--secondary-gray)">泰国资源丰富价格低</small></div>
       </div>
       <div class="info-card">
-        <div class="info-card-icon">📡</div>
+        <div class="info-card-icon">
+          <svg class="icon icon-lg"><use href="#icon-wifi"/></svg>
+        </div>
         <div class="info-card-label">手机网络</div>
-        <div class="info-card-value">AIS / True Move<br><small style="color:var(--text-tertiary)">机场购买约100铢/7天</small></div>
+        <div class="info-card-value">AIS / True Move<br><small style="color:var(--secondary-gray)">机场购买约100铢/7天</small></div>
       </div>
     </div>
   </section>
